@@ -100,11 +100,14 @@ def LR_grad_maker_batch1(X,Y,lambd):
 		theta_0 = w[0]
 		theta = w[1:]
 		new_y = (Y+1)/2
-		sig_arg = np.dot(theta,X.T)
-		R = (sigmoid(sig_arg+theta_0)-new_y) #temp variable
-		big_array = (R*X.T).T
-		summ = np.sum(big_array,axis=0) + 2*lambd*theta
-		return np.insert(summ,0,0)
+		const_term = np.ones([1,X.shape[0]]) # (1,400)
+		new_X = np.concatenate((const_term,X.T),axis=0) # (400,) (2,400)
+		sig_arg = np.dot(w,new_X)
+		R = (sigmoid(sig_arg)-new_y) #temp variable
+		big_array = (R*new_X).T
+		reg_term = 2*lambd*theta
+		summ = np.sum(big_array,axis=0) + np.insert(reg_term,0,0)
+		return summ
 
 	return LR_grad
 
@@ -141,8 +144,8 @@ def grad_approx(x,h,obj_func):
 
 	return np.array(gradient)
 
-LR_obj = LR_obj_maker_batch1(X,Y,100)
-LR_grad = LR_grad_maker_batch1(X,Y,100)
+LR_obj = LR_obj_maker_batch1(X,Y,1)
+LR_grad = LR_grad_maker_batch1(X,Y,1)
 
 # for i in xrange(10):
 # 	w = np.random.random(3)
@@ -156,8 +159,8 @@ guess = np.random.random(3)
 # print fmin(LR_obj,guess)
 
 
-w = batch_gradient_descent(LR_obj,LR_grad,guess,.001,.000001)
-
+w = batch_gradient_descent(LR_obj,LR_grad,guess,.001,.00000001)
+print w
 Cs = [.0001,.001,.01,.1,1,10,100,1000,10000]
 # lambda = 1000,100,10,1,0.1,0.01,0.001,0.0001
 # for val in Cs:
@@ -169,22 +172,22 @@ l2_model = LogisticRegression(C=1)
 l2_model.fit(X,Y)
 
 model = l2_model
-
+print model.intercept_, model.coef_
 
 # Carry out training.
 
 # Define the predictLR(x) function, which uses trained parameters
-# def predictLR(x):
-# 	weight_vector = model.coef_
-# 	w_0 = model.intercept_
-# 	exp_term = exp(-(dot(weight_vector,x)+w_0))
-# 	return 1/(1+exp_term)
-
 def predictLR(x):
-	weight_vector = w[1:]
-	w_0 = w[0]
+	weight_vector = model.coef_
+	w_0 = model.intercept_
 	exp_term = exp(-(dot(weight_vector,x)+w_0))
 	return 1/(1+exp_term)
+
+# def predictLR(x):
+# 	weight_vector = w[1:]
+# 	w_0 = w[0]
+# 	exp_term = exp(-(dot(weight_vector,x)+w_0))
+# 	return 1/(1+exp_term)
 
 # plot training results
 plotDecisionBoundary(X, Y, predictLR, [0.5], title = 'LR Train')

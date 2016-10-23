@@ -13,6 +13,9 @@ X = train[:, 0:2].copy()
 Y = train[:, 2:3].copy()
 
 # Carry out training, primal and/or dual
+
+
+
 ### TODO ###
 # Define the predictSVM(x) function, which uses trained parameters
 ### TODO ###
