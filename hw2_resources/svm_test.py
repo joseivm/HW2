@@ -5,8 +5,12 @@ from cvxopt import matrix, solvers
 import numpy as np
 # import your SVM training code
 
+def kernel(x1,x2):
+    # return np.dot(x1,x2)
+    return 1+np.dot(x1.T, x2)+np.dot(x1.T, x2)**2
+
 # parameters
-name = '1'
+name = '4'
 C = 10**0
 print '======Training======'
 # load data from csv files
@@ -23,8 +27,8 @@ print n,d
 P = np.zeros((n,n))
 for i in xrange(n):
     for j in xrange(n):
-        P[i][j] = np.dot(Y[i]*X[i], Y[j]*X[j])
-# P = P.T
+        P[i][j] = Y[i]*Y[j]*kernel(X[i], X[j])
+P = P.T
 # Construct q
 q = -1 * np.ones(n)
 # Construct G
@@ -50,17 +54,13 @@ b = matrix(b, tc='d')
 sol = solvers.qp(P,q,G,h,A,b)
 
 alpha = sol['x']
-# print alpha
-# print sol['primal objective']
-# print A
-# print np.dot(A, alpha)
 
 # Define the predictSVM(x) function, which uses trained parameters
 def constructPredictSVM(X, Y, alpha):
     n,d = X.shape
     SV = []
     for i in xrange(n):
-        if alpha[i] >= 10**-4:
+        if alpha[i] >= 10**-6 and alpha[i] < C:
             SV.append(i)
 
     # Calculate theta_0
@@ -71,13 +71,13 @@ def constructPredictSVM(X, Y, alpha):
         s = 0
         for t in SV:
             x_t = X[t]
+            y_t = Y[t]
             a_t = alpha[t]
-            s += a_t*np.dot(x_t,x_i)
+            s += a_t*y_t*kernel(x_t,x_i)
         t = (1 - y_i*s)/y_i
-        print "t: ", t
         theta_0s.append(t)
     theta_0 = np.median(theta_0s)
-    print 'theta_0', theta_0
+    # print 'theta_0', theta_0
 
     def predictSVM(x):
         s = 0
@@ -85,7 +85,7 @@ def constructPredictSVM(X, Y, alpha):
             x_t = X[t]
             y_t = Y[t]
             a_t = alpha[t]
-            s += a_t*y_t*np.dot(x_t,x)
+            s += a_t*y_t*kernel(x_t,x)
         return s + theta_0
     return predictSVM
 
