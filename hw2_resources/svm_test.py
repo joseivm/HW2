@@ -64,47 +64,42 @@ def constructPredictSVM(X, Y, alpha):
             SV.append(i)
 
     # Calculate theta_0
-    theta_0 = 0
+    theta_0s = []
     for i in SV:
         x_i = X[i]
         y_i = Y[i]
         s = 0
         for t in SV:
-            x_t = X[i]
+            x_t = X[t]
             a_t = alpha[t]
             s += a_t*np.dot(x_t,x_i)
         t = (1 - y_i*s)/y_i
         print "t: ", t
-        theta_0 += t
-    theta_0 = theta_0 / len(SV)
+        theta_0s.append(t)
+    theta_0 = np.median(theta_0s)
     print 'theta_0', theta_0
 
-
-
-
-
-
     def predictSVM(x):
-        print theta_0
-        print x
-        # for i in xrange(n):
-        #     a_i = alpha[i]
-        # print counter
-
+        s = 0
+        for t in SV:
+            x_t = X[t]
+            y_t = Y[t]
+            a_t = alpha[t]
+            s += a_t*y_t*np.dot(x_t,x)
+        return s + theta_0
     return predictSVM
 
 predictSVM = constructPredictSVM(X, Y, alpha)
-predictSVM(9)
 
-# # plot training results
-# plotDecisionBoundary(X, Y, predictSVM, [-1, 0, 1], title = 'SVM Train')
+# plot training results
+plotDecisionBoundary(X, Y, predictSVM, [-1, 0, 1], title = 'SVM Train')
 
 
-# print '======Validation======'
-# # load data from csv files
-# validate = loadtxt('data/data'+name+'_validate.csv')
-# X = validate[:, 0:2]
-# Y = validate[:, 2:3]
-# # plot validation results
-# plotDecisionBoundary(X, Y, predictSVM, [-1, 0, 1], title = 'SVM Validate')
-# pl.show()
+print '======Validation======'
+# load data from csv files
+validate = loadtxt('data/data'+name+'_validate.csv')
+X = validate[:, 0:2]
+Y = validate[:, 2:3]
+# plot validation results
+plotDecisionBoundary(X, Y, predictSVM, [-1, 0, 1], title = 'SVM Validate')
+pl.show()
