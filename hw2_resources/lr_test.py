@@ -111,28 +111,6 @@ def LR_grad_maker_batch1(X,Y,lambd):
 
 	return LR_grad
 
-def LR_obj_maker_batch(X,Y,lambd):
-	def LR(w):
-		theta = w[1:]
-		theta_0 = w[0]
-		exp_arg = -Y*(np.dot(X,theta) + theta_0)
-		log_arg = 1+np.exp(exp_arg)
-		log = np.log(log_arg)
-		return np.sum(log) + lambd*np.linalg.norm(theta)**2
-	return LR
-
-def LR_grad_maker_batch(X,Y,lambd):
-	product = 0
-	def LR_grad(w):
-		theta = w[1:]
-		theta_0 = w[0]
-		exp_arg = Y*(np.dot(X,theta) + theta_0)
-		print product.shape
-		print exp_arg.shape
-		return -product/(np.exp(exp_arg)+1) + 2*lambd*theta
-
-	return LR_grad
-
 def grad_approx(x,h,obj_func):
 	n = len(x)
 	gradient = []

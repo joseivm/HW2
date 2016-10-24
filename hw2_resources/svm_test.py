@@ -70,11 +70,11 @@ def constructPredictSVM(X, Y, alpha):
         y_i = Y[i]
         s = 0
         for t in SV:
-            x_t = X[i]
+            x_t = X[t]
             a_t = alpha[t]
             s += a_t*np.dot(x_t,x_i)
         t = (1 - y_i*s)/y_i
-        print "t: ", t
+        print "t: ", t, 'a:', alpha[i]
         theta_0 += t
     theta_0 = theta_0 / len(SV)
     print 'theta_0', theta_0
