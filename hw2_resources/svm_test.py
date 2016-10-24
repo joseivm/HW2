@@ -16,10 +16,6 @@ X = train[:, 0:2].copy()
 Y = train[:, 2:3].copy()
 
 # Carry out training, primal and/or dual
-
-
-
-### TODO ###
 n,d = X.shape
 print n,d
 
@@ -29,7 +25,6 @@ for i in xrange(n):
     for j in xrange(n):
         P[i][j] = np.dot(Y[i]*X[i], Y[j]*X[j])
 # P = P.T
-print P
 # Construct q
 q = -1 * np.ones(n)
 # Construct G
@@ -63,15 +58,34 @@ alpha = sol['x']
 # Define the predictSVM(x) function, which uses trained parameters
 def constructPredictSVM(X, Y, alpha):
     n,d = X.shape
+    SV = []
     for i in xrange(n):
-        a_i = alpha[i]
-        # Calculate theta_0
-        if a_i >= 10**-5:
-            print a_i
+        if alpha[i] >= 10**-4:
+            SV.append(i)
+
+    # Calculate theta_0
+    theta_0 = 0
+    for i in SV:
+        x_i = X[i]
+        y_i = Y[i]
+        s = 0
+        for t in SV:
+            x_t = X[i]
+            a_t = alpha[t]
+            s += a_t*np.dot(x_t,x_i)
+        t = (1 - y_i*s)/y_i
+        print "t: ", t
+        theta_0 += t
+    theta_0 = theta_0 / len(SV)
+    print 'theta_0', theta_0
+
+
+
+
 
 
     def predictSVM(x):
-        print counter
+        print theta_0
         print x
         # for i in xrange(n):
         #     a_i = alpha[i]
