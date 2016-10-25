@@ -21,7 +21,7 @@ def batch_gradient_descent(obj_func,gradient_func,init_guess,step_size,convergen
 	converged = False
 	while (not converged):
 
-		# print iterations
+		if iterations%7==0: print iterations
 		w_new = w_old - alpha*gradient_func(w_old)
 		new_cost = obj_func(w_new)
 		
@@ -31,7 +31,7 @@ def batch_gradient_descent(obj_func,gradient_func,init_guess,step_size,convergen
 		old_cost = new_cost
 		w_old = w_new
 
-		
+		if iterations%7==0: print w_new, np.linalg.norm(w_new)
 		iterations+=1
 		
 
@@ -70,8 +70,8 @@ def LR_grad_maker_batch1(X,Y,lambd):
 
 def trainBatchGradientDescent(X,Y,step_size, convergence_criterion):
 	guess = np.random.random(3)
-	LR_obj = LR_obj_maker_batch1(X,Y,1)
-	LR_grad = LR_grad_maker_batch1(X,Y,1)
+	LR_obj = LR_obj_maker_batch1(X,Y,0)
+	LR_grad = LR_grad_maker_batch1(X,Y,0)
 	w = batch_gradient_descent(LR_obj,LR_grad,guess,step_size,convergence_criterion)
 	return w
 
@@ -110,18 +110,18 @@ if __name__ == "__main__":
 
 	C = 10**0
 	# Cs = [.0001,.001,.01,.1,1,10,100,1000,10000]
-	step_size = 10**-3
-	convergence_criterion = 10**-8
+	step_size = 10**-2
+	convergence_criterion = 10**-6
 
-	# w = trainBatchGradientDescent(X, Y, step_size, convergence_criterion)
+	w = trainBatchGradientDescent(X, Y, step_size, convergence_criterion)
 	# w = trainLRL1norm(X,Y,C)
-	w = trainLRL2norm(X,Y,C)
+	# w = trainLRL2norm(X,Y,C)
 
-	predictLR = constructPredictLR(w)
+	# predictLR = constructPredictLR(w)
 
 	# plot training results
-	plotDecisionBoundary(X, Y, predictLR, [0], title = 'LR Train')
-	pl.show()
+	# plotDecisionBoundary(X, Y, predictLR, [0], title = 'LR Train')
+	# pl.show()
 
 
 	# print '======Validation======'

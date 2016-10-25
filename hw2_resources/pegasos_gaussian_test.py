@@ -66,13 +66,14 @@ def kernelized_pegasos_alg(X,Y,lambd,K,max_iter):
 def train_gaussianSVM(X,Y,K,lmbda,epochs):
 	return kernelized_pegasos_alg(X,Y,lmbda,K,epochs)
 
-for i in [0,1,2]:
+for i in [-2,-1,0,1,2]:
 	print '2^',i
 	g_kernel = g_kernel_maker(2**i)
 	K = build_K_matrix(X,g_kernel)
 
 
 	alphas = train_gaussianSVM(X, Y, K, lmbda, epochs);
+	print np.count_nonzero(alphas)
 
 
 	# Define the predict_gaussianSVM(x) function, which uses trained parameters, alpha
