@@ -14,6 +14,12 @@ Y = train[:,2:3]
 def kernel(x1,x2):
     return np.dot(x1, x2)
 
+def g_kernel_maker(gamma):
+	def g_kernel(x1,x2):
+		term = -gamma*np.linalg.norm(x1-x2)**2
+		return np.exp(term)
+	return g_kernel
+
 def pegasos_alg(X,Y,lambd,max_iter):
 	t = 0
 	w = np.zeros(X.shape[1]+1)
@@ -112,8 +118,6 @@ def build_K_matrix(X,kernel):
 ### TODO: define predict_linearSVM(x) ###
 
 
-
-
 def predict_linearSVM_kernelized(x):
 	summ = 0
 	for i in alphas:
@@ -126,6 +130,8 @@ def predict_linearSVM(x):
 	return np.dot(theta,x)+theta_0
 
 # # plot training results
+for i in xrange(-2,3):
+
 
 # plotDecisionBoundary(X, Y, predict_linearSVM, [-1,0,1], title = 'Linear SVM')
 # pl.show()
