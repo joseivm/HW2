@@ -1,6 +1,7 @@
 from plotBoundary import *
 from lr_test import *
 from svm_test import *
+from pegasos_linear_test import *
 import numpy as np
 
 from matplotlib import pyplot as plt
@@ -58,8 +59,13 @@ def buildSVMPredict(X,Y,C):
     predict = constructPredictSVM(X, Y, alpha)
     return predict
 
-def buildPegasosPredict(X,Y):
-    return predict
+def buildPegasosPredict(X,Y,lmbda,max_iter):
+    w = pegasos_alg(X,Y,lmbda,max_iter)
+    def predict_linearSVM(x):
+        theta_0 = w[0]
+        theta = w[1:]
+        return np.dot(theta,x)+theta_0
+    return predict_linearSVM
 
 def openMisclassifications(X,Y,misclassifications):
     for i in misclassifications:
