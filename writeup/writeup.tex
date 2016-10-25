@@ -27,9 +27,9 @@
  % Problem 1
 % **************************************************************************************************
 
-\section{\uppercase{Implementing Gradient Descent}}
+\section{\uppercase{Logistic Regression}}
 
-\noindent Gradient descent is an iterative procedure for finding a vector that minimizes an objective function. Typically, the vector is our parameters and the objective function is the cost function. In each iteration, we find the gradient of the objective function evaluated at the vector and update the vector in the direction of the negative gradient.
+\noindent Logistic Regression is a discriminative model used for classification. Given an input x, it finds the posterior of x belonging to one of the classes and then uses that to classify x. In the simplest case, it takes the dot product of x and w and uses that as an input to the sigmoid function, which outputs a number between 0 and 1. An advantage of logistic regressions is that they have few parameters, which allows them to be trained relatively quickly. One of the problems with logistic regressions is that they are very prone to overfitting to the training data. One way to prevent the overfitting is to add a regularization term, lambda, which penalizes the size of the weight vector. The size of the weight vector can be penalized using the L1 norm of the L2 norm. 
 
 \subsection{Basic Gradient Descent}
 
@@ -120,7 +120,9 @@ J(\theta_t; x^{(i)}, y^{(i)}) = (x^{(i)T} \theta_t - y^{(i)})^2
  % Problem 2
 % **************************************************************************************************
 
-\section{\uppercase{Linear Basis Function Regression}}
+\section{\uppercase{Support Vector Machines}}
+
+Support Vector Machines are a method for classification where some examples of the training data are used to classify new points. SVM's try to maximize the margin between the decision boundary and the closest training examples. This is to help the classifier generalize better to unseen data and to make it more robust to noise. SVM's aim to maximize the size of the margin, while making sure that each training sample is properly classified. The introduction of a slack variable, (insert slack), allows the misclassify some training samples. With the slack variables, the objective function becomes:
 
 In the supervised learning problem of regression, we are given a set of $n$ data points and $n$ target values and the goal is to find a function that relates $x$ to $y$. We have to do this in such a way that this function generalizes well to unseen values of $x$. Linear Basis Function Regression aims to find the optimal linear combination of basis functions to create a function mapping $x$ to $y$. This linear combination is expressed as a vector of weights for each of these basis functions. These basis functions take the form
 
