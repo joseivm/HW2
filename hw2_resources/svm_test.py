@@ -18,20 +18,14 @@ def trainSVM(X,Y,C):
     for i in xrange(n):
         for j in xrange(n):
             P[i][j] = Y[i]*Y[j]*kernel(X[i], X[j])
-    P = P.T
-    # Construct q
     q = -1 * np.ones(n)
-    # Construct G
     G1 = np.identity(n)
     G2 = -1*np.identity(n)
     G = np.concatenate((G1, G2))
-    # Construct h
     h1 = C * np.ones(n)
     h2 = np.zeros(n)
     h = np.concatenate((h1,h2))
-    # Construct A
     A = np.array(Y.T)
-    # Construct b
     b = np.zeros(1)
 
     P = matrix(P, tc='d')

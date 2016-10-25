@@ -3,6 +3,7 @@ from lr_test import *
 from svm_test import *
 import numpy as np
 
+from matplotlib import pyplot as plt
 
 def buildTrainingSet(pos_digits, neg_digits):
     return buildSet(pos_digits, neg_digits, 200, 0)
@@ -45,6 +46,7 @@ def evaluatePredict(X, Y, predict):
     print "# of misclass: ", misclass
     print "Misclass rate: ", misclass*1.0/n
     print "Misclassifications: ", misclassifications
+    return misclassifications
 
 def buildLRPredict(X,Y,C):
     w = trainLRL1norm(X,Y,C)
@@ -59,11 +61,18 @@ def buildSVMPredict(X,Y,C):
 def buildPegasosPredict(X,Y):
     return predict
 
+def openMisclassifications(X,Y,misclassifications):
+    for i in misclassifications:
+        data = X[i].reshape((28,28))
+        plt.imshow(data, cmap = plt.get_cmap('gray'))
+        plt.show()
 
-C = 10**0
-pos_digits = [7]
-neg_digits = [1]
 
+C_SVM = [10**0, 10**1, 10**2]
+pos_digits = [1,3,5,7,9]
+neg_digits = [0,2,4,6,8]
+print "Postive Digits:  ", pos_digits
+print "Negative Digits: ", neg_digits
 print '======Setting Up======'
 trainX,trainY = buildTrainingSet(pos_digits, neg_digits)
 valX, valY = buildValidationSet(pos_digits,neg_digits)
@@ -71,11 +80,19 @@ testX, testY = buildTestSet(pos_digits,neg_digits)
 
 print '======Training======'
 # predict = buildLRPredict(trainX, trainY, C)
-predict = buildSVMPredict(trainX, trainY, C)
+for C in C_SVM:
+    predict = buildSVMPredict(trainX, trainY, C)
+
 # predict = buildPegasosPredict(trainX, trainY)
-evaluatePredict(trainX, trainY, predict)
+misclassifications = evaluatePredict(trainX, trainY, predict)
+
+openMisclassifications(trainX, trainY, misclassifications)
 
 print '======Validation======'
-evaluatePredict(valX, valY, predict)
+misclassifications = evaluatePredict(valX, valY, predict)
+openMisclassifications(valX, valY, misclassifications)
 
+print '======Testing======'
+misclassifications = evaluatePredict(testX, testY, predict)
+openMisclassifications(testX, testY, misclassifications)
 
