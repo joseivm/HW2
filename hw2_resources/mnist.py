@@ -44,10 +44,11 @@ def evaluatePredict(X, Y, predict):
             misclass += 1
             misclassifications.append(i)
 
+    misclassrate = misclass*1.0/n
     print "# of misclass: ", misclass
-    print "Misclass rate: ", misclass*1.0/n
+    print "Misclass rate: ", misclassrate
     print "Misclassifications: ", misclassifications
-    return misclassifications
+    return misclassrate, misclassifications
 
 def buildLRPredict(X,Y,C):
     w = trainLRL1norm(X,Y,C)
@@ -75,8 +76,9 @@ def openMisclassifications(X,Y,misclassifications):
 
 
 C_SVM = [10**0, 10**1, 10**2]
-pos_digits = [1,3,5,7,9]
-neg_digits = [0,2,4,6,8]
+C_LR = [10**0, 10**1, 10**2]
+pos_digits = [1]
+neg_digits = [7]
 print "Postive Digits:  ", pos_digits
 print "Negative Digits: ", neg_digits
 print '======Setting Up======'
@@ -85,20 +87,36 @@ valX, valY = buildValidationSet(pos_digits,neg_digits)
 testX, testY = buildTestSet(pos_digits,neg_digits)
 
 print '======Training======'
-# predict = buildLRPredict(trainX, trainY, C)
+predicts = []
 for C in C_SVM:
+    # predict = buildLRPredict(trainX, trainY, C)
     predict = buildSVMPredict(trainX, trainY, C)
+    # predict = buildPegasosPredict(trainX, trainY)
+    predicts.append((C,predict))
 
-# predict = buildPegasosPredict(trainX, trainY)
-misclassifications = evaluatePredict(trainX, trainY, predict)
-
-openMisclassifications(trainX, trainY, misclassifications)
+# misclassifications = evaluatePredict(trainX, trainY, predict)
+# openMisclassifications(trainX, trainY, misclassifications)
 
 print '======Validation======'
-misclassifications = evaluatePredict(valX, valY, predict)
-openMisclassifications(valX, valY, misclassifications)
+bestC = 0
+bestpredict = 0
+bestmisclassifications = []
+bestmisclassrate = 1
+for C,predict in predicts:
+    misclassrate, misclassifications = evaluatePredict(valX, valY, predict)
+    if misclassrate < bestmisclassrate:
+        bestC = C
+        bestpredict = predict
+        bestmisclassifications = misclassifications
+
+print '======Best Validation======'
+print "C: ", bestC
+print "Misclassification rate: ", bestmisclassrate
+print "Misclassifications: ", bestmisclassifications
+openMisclassifications(valX, valY, bestmisclassifications)
 
 print '======Testing======'
-misclassifications = evaluatePredict(testX, testY, predict)
+misclassrate,misclassifications = evaluatePredict(testX, testY, bestpredict)
+print "Misclassification rate: ", misclassrate
 openMisclassifications(testX, testY, misclassifications)
 
