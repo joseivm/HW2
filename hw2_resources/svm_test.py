@@ -6,8 +6,8 @@ import numpy as np
 # import your SVM training code
 
 def kernel(x1,x2):
-    # return np.dot(x1,x2)
-    return 1+np.dot(x1.T, x2)+np.dot(x1.T, x2)**2
+    return np.dot(x1,x2)
+    # return 1+np.dot(x1.T, x2)+np.dot(x1.T, x2)**2
 
 def trainSVM(X,Y,C):
     # Carry out training, primal and/or dual

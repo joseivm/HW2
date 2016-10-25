@@ -60,13 +60,10 @@ def buildSVMPredict(X,Y,C):
     predict = constructPredictSVM(X, Y, alpha)
     return predict
 
-def buildPegasosPredict(X,Y,lmbda,max_iter):
-    w = pegasos_alg(X,Y,lmbda,max_iter)
-    def predict_linearSVM(x):
-        theta_0 = w[0]
-        theta = w[1:]
-        return np.dot(theta,x)+theta_0
-    return predict_linearSVM
+def buildPegasosPredict(X,Y,lambd,max_iter):
+    w = pegasos_alg(X,Y,lambd,max_iter)
+    predict = constructPredictPegasosLinearSVM(w)
+    return predict
 
 def openMisclassifications(X,Y,misclassifications):
     for i in misclassifications:
@@ -77,6 +74,9 @@ def openMisclassifications(X,Y,misclassifications):
 
 C_SVM = [10**0, 10**1, 10**2]
 C_LR = [10**0, 10**1, 10**2]
+lambds = [2**-10]
+max_iter = 500
+
 pos_digits = [1]
 neg_digits = [7]
 print "Postive Digits:  ", pos_digits
@@ -88,29 +88,33 @@ testX, testY = buildTestSet(pos_digits,neg_digits)
 
 print '======Training======'
 predicts = []
-for C in C_SVM:
-    # predict = buildLRPredict(trainX, trainY, C)
-    predict = buildSVMPredict(trainX, trainY, C)
-    # predict = buildPegasosPredict(trainX, trainY)
-    predicts.append((C,predict))
+# for C in C_LR:
+#     predict = buildLRPredict(trainX, trainY, C)
+#     predicts.append((C, predict))
+# for C in C_SVM:
+#     predict = buildSVMPredict(trainX, trainY, C)
+#     predicts.append((C,predict))
+for lambd in lambds:
+    predict = buildPegasosPredict(trainX, trainY, lambd, max_iter)
+    predicts.append((lambd,predict))
 
 # misclassifications = evaluatePredict(trainX, trainY, predict)
 # openMisclassifications(trainX, trainY, misclassifications)
 
 print '======Validation======'
-bestC = 0
+bestParam = 0
 bestpredict = 0
 bestmisclassifications = []
 bestmisclassrate = 1
-for C,predict in predicts:
+for param,predict in predicts:
     misclassrate, misclassifications = evaluatePredict(valX, valY, predict)
     if misclassrate < bestmisclassrate:
-        bestC = C
+        bestParam = param
         bestpredict = predict
         bestmisclassifications = misclassifications
 
 print '======Best Validation======'
-print "C: ", bestC
+print "Param: ", bestParam
 print "Misclassification rate: ", bestmisclassrate
 print "Misclassifications: ", bestmisclassifications
 openMisclassifications(valX, valY, bestmisclassifications)
