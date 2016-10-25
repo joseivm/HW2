@@ -6,52 +6,9 @@ from sklearn.linear_model import LogisticRegression
 from scipy.optimize import fmin
 # import your LR training code
 
-# parameters
-name = '3'
-# print '======Training======'
-# load data from csv files
-train = loadtxt('data/data'+name+'_train.csv')
-X = train[:,0:2] # (400,2)
-Y = train[:,2:3] #(400,1)
-
-Y = Y.ravel()
 
 def sigmoid(x):
 	return 1.0/(1+np.exp(-x))
-
-def stochastic_gradient_descent(obj_func,gradient_func,init_guess,step_size,convergence_criterion,X,y):
-	num_samples = X.shape[0]
-	w_old = init_guess
-	w_new = np.zeros(len(w_old))
-	alpha = step_size
-	old_cost = obj_func(w_old)
-	new_cost = np.inf
-	iterations=1
-	converged = False
-	while (not converged):
-		indices = np.arange(num_samples)
-		np.random.shuffle(indices)
-		# print iterations
-		for i in indices:
-
-			w_new = w_old - alpha*gradient_func(w_old,X[i],y[i])
-			
-		new_cost = obj_func(w_new)
-		
-		if np.absolute(new_cost - old_cost) < convergence_criterion:
-			converged = True
-
-		print new_cost
-		old_cost = new_cost
-		w_old = w_new
-
-		
-		iterations+=1
-		
-
-	print 'minimum occurs at: ', w_new
-	print 'minimum value', new_cost
-	return w_new
 
 def batch_gradient_descent(obj_func,gradient_func,init_guess,step_size,convergence_criterion):
 	size = init_guess.shape[0]
@@ -111,73 +68,68 @@ def LR_grad_maker_batch1(X,Y,lambd):
 
 	return LR_grad
 
-def grad_approx(x,h,obj_func):
-	n = len(x)
-	gradient = []
-	for i in range(n):
-		unit_vec = np.zeros(n)
-		unit_vec[i] = 1
-		df_dxi = (obj_func(x+h*unit_vec)-obj_func(x-h*unit_vec))/(2*h)
-		gradient.append(df_dxi)
+def trainBatchGradientDescent(X,Y,step_size, convergence_criterion):
+	guess = np.random.random(3)
+	LR_obj = LR_obj_maker_batch1(X,Y,1)
+	LR_grad = LR_grad_maker_batch1(X,Y,1)
+	w = batch_gradient_descent(LR_obj,LR_grad,guess,step_size,convergence_criterion)
+	return w
 
-	return np.array(gradient)
+def trainLRL1norm(X,Y,C):
+	model = LogisticRegression(penalty='l1',C=C)
+	model.fit(X,Y)
+	w = np.concatenate((model.intercept_,model.coef_[0]))
+	return w
 
-LR_obj = LR_obj_maker_batch1(X,Y,1)
-LR_grad = LR_grad_maker_batch1(X,Y,1)
+def trainLRL2norm(X,Y,C):
+	model = LogisticRegression(C=C)
+	model.fit(X,Y)
+	w = np.concatenate((model.intercept_,model.coef_[0]))
+	return w
 
-# for i in xrange(10):
-# 	w = np.random.random(3)
-# 	print 'real:', LR_grad(w)
-	# print 'approx:', grad_approx(w,.01,LR_obj)
-
-
-
-
-guess = np.random.random(3)
-# print fmin(LR_obj,guess)
-
-
-w = batch_gradient_descent(LR_obj,LR_grad,guess,.001,.00000001)
-print w
-Cs = [.0001,.001,.01,.1,1,10,100,1000,10000]
-# lambda = 1000,100,10,1,0.1,0.01,0.001,0.0001
-# for val in Cs:
-
-# l1_model = LogisticRegression(penalty='l1',C=val)
-l2_model = LogisticRegression(C=1)
-
-# l1_model.fit(X,Y)
-l2_model.fit(X,Y)
-
-model = l2_model
-print model.intercept_, model.coef_
-
-# Carry out training.
-
-# Define the predictLR(x) function, which uses trained parameters
-def predictLR(x):
-	weight_vector = model.coef_
-	w_0 = model.intercept_
-	exp_term = exp(-(dot(weight_vector,x)+w_0))
-	return 1/(1+exp_term)
-
-# def predictLR(x):
-# 	weight_vector = w[1:]
-# 	w_0 = w[0]
-# 	exp_term = exp(-(dot(weight_vector,x)+w_0))
-# 	return 1/(1+exp_term)
-
-# plot training results
-plotDecisionBoundary(X, Y, predictLR, [0.5], title = 'LR Train')
-pl.show()
+def constructPredictLR(w):
+	def predictLR(x):
+		weight_vector = w[1:]
+		w_0 = w[0]
+		exp_term = exp(-(dot(weight_vector,x)+w_0))
+		s = 1/(1+exp_term)
+		return s - 0.5
+	return predictLR
 
 
-# print '======Validation======'
-# # load data from csv files
-# validate = loadtxt('data/data'+name+'_validate.csv')
-# X = validate[:,0:2]
-# Y = validate[:,2:3]
+if __name__ == "__main__":
+	name = '3'
 
-# # plot validation results
-# plotDecisionBoundary(X, Y, predictLR, [0.5], title = 'LR Validate')
-# pl.show()
+	# print '======Training======'
+	# load data from csv files
+	train = loadtxt('data/data'+name+'_train.csv')
+	X = train[:,0:2] # (400,2)
+	Y = train[:,2:3] #(400,1)
+
+	Y = Y.ravel()
+
+	C = 10**0
+	# Cs = [.0001,.001,.01,.1,1,10,100,1000,10000]
+	step_size = 10**-3
+	convergence_criterion = 10**-8
+
+	# w = trainBatchGradientDescent(X, Y, step_size, convergence_criterion)
+	# w = trainLRL1norm(X,Y,C)
+	w = trainLRL2norm(X,Y,C)
+
+	predictLR = constructPredictLR(w)
+
+	# plot training results
+	plotDecisionBoundary(X, Y, predictLR, [0], title = 'LR Train')
+	pl.show()
+
+
+	# print '======Validation======'
+	# # load data from csv files
+	# validate = loadtxt('data/data'+name+'_validate.csv')
+	# X = validate[:,0:2]
+	# Y = validate[:,2:3]
+
+	# # plot validation results
+	# plotDecisionBoundary(X, Y, predictLR, [0.5], title = 'LR Validate')
+	# pl.show()
