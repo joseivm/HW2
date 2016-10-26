@@ -41,11 +41,20 @@
 \subsection{Section1}
 
 
-
+You should be able to concisely represent trends for those configurations. For example, you could have one plot showing the effect of the error rate for different regularizers and lambdas, a good example of changing the decision boundary, and general observations, and maybe a plot about the weights. Perform your experiments and see what makes the most sense.
 
 \subsection{L1 vs L2 Norm}
 
-Two common metrics used to penalize the size of the weight vector are the L1 and L2 norm. The 
+Two common metrics used to penalize the size of the weight vector are the L1 and L2 norm. The norms are defined as follows: (L1 is sum of absolute values). We tested the effect of each of these norms and different lambda values on the Classification Error Rate, decision boundary, and the weights of the weight vector. We used scikit-learn's implementation of Logistic Regression, which also penalizes the bias term. To allow for unpenalized bias, the logistic regression has an additional parameter, intercept_scaling, which is a factor by which the intercept is multiplied by to offset the effects of the regularization. We set the value of the intercept scaling to be equal to the lambda value. We tested both the L1 and L2 model with lambda values ranging from 10^-5 to 10^5. 
+
+Effect on Classification Error Rate:
+In general, we found that the regularization seemed to have a larger effect on the CER when using the L1 norm then when using the L2 norm. The L2 norm logistic regression was able to maintain low CER's even with high lambda values. The L1 norm, on the other hand, often drove the weight vector to zero, which increased the CER. For most data sets, the L2 norm achieved a better CER than the L1 norm when set to the same lambda values. When both weight vectors were nonzero, their CER's usually only differed by a percentage point. The difference between the CER's grew dramatically whenever the L1 norm drove one of the weights in the weight vector to zero. The two models generally behaved that way except for the last data set, in which the data was linearly inseparable. There, the L1 and L2 norm achieved very similar CER scores for every lambda value we tested. 
+
+Effect on Decision Boundary 
+As mentioned in the previous section, the L1 norm tends to drive the weights of the weight vector to zero as lambda increases. As a result, there were several instances where the decision boundary was simply the x axis CHECK THIS. In general, we found that decreasing lambda changed the decision boundary in a direction where it could better separate the training data. This was true for all of the data sets where the data was linearly separable. For the data set in which the data was linearly inseparable, the decision boundary never changed, regardless of the lambda value. 
+
+Effect on Weights
+Higher lambda values decreased the weights of the weight vector in both models. Higher lambda values affected the L1 model a lot more, as it was more likely to have zero valued weights. The L2 model was more likely to have very small, but still nonzero weights. 
 
 
 \subsection{Section2}
