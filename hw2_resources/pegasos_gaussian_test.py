@@ -66,7 +66,7 @@ def kernelized_pegasos_alg(X,Y,lambd,K,max_iter):
 def train_gaussianSVM(X,Y,K,lmbda,epochs):
 	return kernelized_pegasos_alg(X,Y,lmbda,K,epochs)
 
-for i in [-2,-1,0,1,2]:
+for i in [-1,0,1,2]:
 	print '2^',i
 	g_kernel = g_kernel_maker(2**i)
 	K = build_K_matrix(X,g_kernel)
@@ -80,5 +80,5 @@ for i in [-2,-1,0,1,2]:
 	### TODO:  define predict_gaussianSVM(x) ###
 
 	# plot training results
-	# plotDecisionBoundary(X, Y, predict_gaussianSVM, [-1,0,1], title = 'Gaussian Kernel SVM')
-	# pl.show()
+	plotDecisionBoundary(X, Y, predict_gaussianSVM, [-1,0,1], title = 'Gaussian Kernel SVM')
+	pl.show()

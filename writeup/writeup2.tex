@@ -97,28 +97,28 @@ As mentioned in the previous section, the $L_1$ norm tends to drive the weights 
         \begin{subfigure}[b]{0.25\textwidth}
                 \centering
                 \includegraphics[width=\linewidth]{Figures/P1/LR1__1.png}
-                \caption{A gull}
+                \caption{$\lambda = 0.1$}
                 \label{fig:gull}
         \end{subfigure}%
         \begin{subfigure}[b]{0.25\textwidth}
                 \centering
                 \includegraphics[width=\linewidth]{Figures/P1/LR1_1.png}
-                \caption{A gull2}
+                \caption{$\lambda = 1$}
                 \label{fig:gull2}
         \end{subfigure}%
         \begin{subfigure}[b]{0.25\textwidth}
                 \centering
-                \includegraphics[width=\linewidth]{Figures/P1/LR1_10.png}
-                \caption{A tiger}
+                \includegraphics[width=\linewidth]{Figures/P1/LR1_100.png}
+                \caption{$\lambda = 100$}
                 \label{fig:tiger}
         \end{subfigure}%
         \begin{subfigure}[b]{0.25\textwidth}
                 \centering
                 \includegraphics[width=\linewidth]{Figures/P1/LR1_1000.png}
-                \caption{A mouse}
+                \caption{$\lambda = 1000$}
                 \label{fig:mouse}
         \end{subfigure}
-        \caption{Pictures of animals}\label{fig:animals}
+        \caption{$L_1$ Regularization with different $\lambda$s}\label{fig:animals}
 \end{figure}
 
 
@@ -326,14 +326,26 @@ Even though SVMs have some nice properties, it can be very inefficient to solve 
 \min_w \frac{\lambda}{2}\left \| w \right \|^2 + \frac{1}{n} \sum_{i=1}^n \max{0,1-y^{(i)}(w^Tx^{(i))})} 
 \end{equation}
 
-This formulation of Soft-SVM is equivalent to C-SVM with $C = \frac{1}{n\lambda}$. 
+This formulation of Soft-SVM is equivalent to C-SVM with $C = \frac{1}{n\lambda}$. The algorithm updates the weight vector for the linear decision boundary of the SVM according to the following update rule if it misclassifies a training sample: 
+
+\begin{equation}
+w_{t+1}\leftarrow (1 - \frac{1}{t} )w_t + \frac{1}{t\lambda}y_ix_i
+\end{equation}
+
+And it updates it according to this rule if it correctly classifies a training sample:
+
+\begin{equation}
+w_{t+1}\leftarrow (1 - \frac{1}{t} )w_t 
+\end{equation}
 
 \subsection{Linear SVM}
-We implemented the Pegasos algorithm to solve the objective function shown above and tested several values of lambda between 2^1 and 2^-10 and found that the margin shrank as lambda was increased. 
+We implemented the Pegasos algorithm to solve the objective function shown above and tested several values of lambda between 2^1 and 2^-10. We found that the margin shrank as lambda was increased. 
 
 
 \subsection{Kernelized Pegasos}
-The Pegasos algorithm can be easily modified to support Kernels. We implemented this modification and evaluated the performance of SVMs trained using Pegasos. 
+The Pegasos algorithm can be easily modified to support Kernels. We implemented this modification and evaluated the performance of SVMs trained using Pegasos. The modification involves finding the actual $\alpha$ values instead of the weights for the linear decision boundary. Having found the optimal $\alpha$s, the decision rule becomes $\sum_j \alpha_j K(x_j,x_i)$. If that sum is positive for a vector $x$, then that sample is classified as positive, otherwise, it is classified as negative. 
+
+Having implemented the Kernelized version of the Pegasos algorithm, we classified the same data as before, but we used a Gaussian kernel. With a fixed value of $\lambda = .02$, we tested out values for $\gamma $ between $2^2$ and $2^{-2}$. We found that as $\gamma $ increased, the number of support vectors also increased. We believe that this is because the increasing $\gamma $ decreases the variance of the guassian kernel. This means that it becomes harder for points to satisfy the constraints 
 
 
 % **************************************************************************************************
