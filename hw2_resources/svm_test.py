@@ -75,7 +75,7 @@ def constructPredictSVM(X, Y, alpha):
 
 if __name__ == "__main__":
     # parameters
-    name = '4'
+    name = '1'
     C = 10**0
     print '======Training======'
     # load data from csv files

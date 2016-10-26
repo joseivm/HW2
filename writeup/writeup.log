@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 OCT 2016 00:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 OCT 2016 23:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -285,30 +285,6 @@ Package caption Info: subfigure package is loaded.
 
 LaTeX Warning: Label `fig:gradient_converging' multiply defined.
 
-
-LaTeX Warning: Label `fig:gradient_converging' multiply defined.
-
-
-LaTeX Warning: Label `fig:gradient_converging' multiply defined.
-
-
-LaTeX Warning: Label `fig:gradient_converging' multiply defined.
-
-
-LaTeX Warning: Label `fig:gradient_converging' multiply defined.
-
-
-LaTeX Warning: Label `fig:gradient_converging' multiply defined.
-
-
-LaTeX Warning: Label `fig:gradient_converging' multiply defined.
-
-
-LaTeX Warning: Label `fig:gradient_converging' multiply defined.
-
-
-LaTeX Warning: Label `fig:gradient_converging' multiply defined.
-
 )
 \openout1 = `writeup.aux'.
 
@@ -531,288 +507,1063 @@ If that doesn't work, type  X <return>  to quit.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Command \i invalid in math mode on input line 85.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-LaTeX Warning: Command \i invalid in math mode on input line 85.
-
-
-LaTeX Warning: Command \i invalid in math mode on input line 85.
-
-
-LaTeX Warning: Command \i invalid in math mode on input line 85.
-
-[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+ [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2]
-
-LaTeX Warning: File `../Figures/P2/P2.1/M=1.png' not found on input line 142.
+LaTeX Warning: Command \i invalid in math mode on input line 85.
 
 
-! Package pdftex.def Error: File `../Figures/P2/P2.1/M=1.png' not found.
+LaTeX Warning: Command \i invalid in math mode on input line 85.
 
-See the pdftex.def package documentation for explanation.
+
+LaTeX Warning: Command \i invalid in math mode on input line 85.
+
+
+LaTeX Warning: Command \i invalid in math mode on input line 85.
+
+[2]
+! Undefined control sequence.
+l.128 ...{1}{2} ||w||^2 s.t. y^i(w^T x^i + b) \gte
+                                                   1, 1 \lte i \lte n
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.128 ...||^2 s.t. y^i(w^T x^i + b) \gte 1, 1 \lte
+                                                   i \lte n
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.128 ...t. y^i(w^T x^i + b) \gte 1, 1 \lte i \lte
+                                                   n
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Illegal character in array arg.
+
+See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.142 ...h=\linewidth]{../Figures/P2/P2.1/M=1.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
 
-LaTeX Warning: File `../Figures/P2/P2.1/M=3.png' not found on input line 148.
+! Missing \endcsname inserted.
+<to be read again> 
+                   \@ne 
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Extra \endcsname.
+\qopname  ...font #3}\csname n#2limits@\endcsname 
+                                                  
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+I'm ignoring this, since I wasn't doing a \csname.
+
+! Undefined control sequence.
+<argument> \@nextchar 
+                      
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \@nextchar 
+                      
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \begingroup 
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \begingroup 
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
 
-! Package pdftex.def Error: File `../Figures/P2/P2.1/M=3.png' not found.
+! LaTeX Error: Illegal character in array arg.
 
-See the pdftex.def package documentation for explanation.
+See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.148 ...h=\linewidth]{../Figures/P2/P2.1/M=3.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+! Undefined control sequence.
+\@acol ->\edef \@preamble {\@preamble 
+                                      \hskip \arraycolsep }
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+! Undefined control sequence.
+\@classz ...\ifcase \@chnum \hfil $\relax \@sharp 
+                                                  $\hfil \or $\relax \@sharp...
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: File `../Figures/P2/P2.1/M=6.png' not found on input line 154.
+! LaTeX Error: Illegal character in array arg.
 
-
-! Package pdftex.def Error: File `../Figures/P2/P2.1/M=6.png' not found.
-
-See the pdftex.def package documentation for explanation.
+See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.154 ...h=\linewidth]{../Figures/P2/P2.1/M=6.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+! Undefined control sequence.
+\@classz ...\ifcase \@chnum \hfil $\relax \@sharp 
+                                                  $\hfil \or $\relax \@sharp...
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
 
+! LaTeX Error: Illegal character in array arg.
 
-LaTeX Warning: File `../Figures/P2/P2.1/M=8.png' not found on input line 160.
-
-
-! Package pdftex.def Error: File `../Figures/P2/P2.1/M=8.png' not found.
-
-See the pdftex.def package documentation for explanation.
+See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.160 ...h=\linewidth]{../Figures/P2/P2.1/M=8.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+! Undefined control sequence.
+\@classz ...\ifcase \@chnum \hfil $\relax \@sharp 
+                                                  $\hfil \or $\relax \@sharp...
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3]
+! LaTeX Error: Illegal character in array arg.
 
-LaTeX Warning: File `../Figures/P2/P2.3/cosine_graph.png' not found on input li
-ne 191.
-
-
-! Package pdftex.def Error: File `../Figures/P2/P2.3/cosine_graph.png' not foun
-d.
-
-See the pdftex.def package documentation for explanation.
+See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.191 ...dth]{../Figures/P2/P2.3/cosine_graph.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+! Undefined control sequence.
+\@classz ...\ifcase \@chnum \hfil $\relax \@sharp 
+                                                  $\hfil \or $\relax \@sharp...
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Underfull \hbox (badness 1132) in paragraph at lines 204--205
-[]\OT1/ptm/m/n/10 Linear re-gres-sions, es-pe-cially those with sum
- []
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-[4]
+! Improper \halign inside $$'s.
+<recently read> \halign 
+                        
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+Displays can use special alignments (like \eqalignno)
+only if nothing but the alignment itself is between $$'s.
+So I've deleted the formulas that preceded this alignment.
 
-LaTeX Warning: File `../Figures/P2/P2.3/M=1.png' not found on input line 217.
+! Undefined control sequence.
+\@preamble ...\tabskip \z@skip \halign \@halignto 
+                                                  \bgroup \relax \copy \@ars...
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
+! Missing # inserted in alignment preamble.
+<to be read again> 
+                   &
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+There should be exactly one # between &'s, when an
+\halign or \valign is being set up. In this case you had
+none, so I've put one in; maybe that will work.
 
-! Package pdftex.def Error: File `../Figures/P2/P2.3/M=1.png' not found.
+! Missing # inserted in alignment preamble.
+<to be read again> 
+                   &
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+There should be exactly one # between &'s, when an
+\halign or \valign is being set up. In this case you had
+none, so I've put one in; maybe that will work.
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.217 ...h=\linewidth]{../Figures/P2/P2.3/M=1.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+! Missing # inserted in alignment preamble.
+<to be read again> 
+                   &
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+There should be exactly one # between &'s, when an
+\halign or \valign is being set up. In this case you had
+none, so I've put one in; maybe that will work.
 
+! Missing # inserted in alignment preamble.
+<to be read again> 
+                   &
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+There should be exactly one # between &'s, when an
+\halign or \valign is being set up. In this case you had
+none, so I've put one in; maybe that will work.
 
-LaTeX Warning: File `../Figures/P2/P2.3/M=3.png' not found on input line 222.
+! Missing # inserted in alignment preamble.
+<to be read again> 
+                   \cr 
+l.133 \min
+           \frac{1}{2} ||w||^2 &\\
+There should be exactly one # between &'s, when an
+\halign or \valign is being set up. In this case you had
+none, so I've put one in; maybe that will work.
 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.133 \min \frac{1}{2}
+                       ||w||^2 &\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
-! Package pdftex.def Error: File `../Figures/P2/P2.3/M=3.png' not found.
+! Extra }, or forgotten $.
+\frac  #1#2->{\begingroup #1\endgroup \@@over #2}
+                                                 
+l.133 \min \frac{1}{2}
+                       ||w||^2 &\\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.222 ...h=\linewidth]{../Figures/P2/P2.3/M=3.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-LaTeX Warning: File `../Figures/P2/P2.3/M=5.png' not found on input line 227.
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-! Package pdftex.def Error: File `../Figures/P2/P2.3/M=5.png' not found.
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.227 ...h=\linewidth]{../Figures/P2/P2.3/M=5.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-[5]
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-LaTeX Warning: File `../Figures/P4/lasso_varying.png' not found on input line 2
-64.
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-! Package pdftex.def Error: File `../Figures/P4/lasso_varying.png' not found.
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.264 ...newidth]{../Figures/P4/lasso_varying.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-LaTeX Warning: File `../Figures/P4/lasso_best.png' not found on input line 270.
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-! Package pdftex.def Error: File `../Figures/P4/lasso_best.png' not found.
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.270 ...\linewidth]{../Figures/P4/lasso_best.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-LaTeX Warning: File `../Figures/P4/ridge_varying.png' not found on input line 2
-76.
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-! Package pdftex.def Error: File `../Figures/P4/ridge_varying.png' not found.
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.276 ...newidth]{../Figures/P4/ridge_varying.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-LaTeX Warning: File `../Figures/P4/ridge_best.png' not found on input line 282.
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-! Package pdftex.def Error: File `../Figures/P4/ridge_best.png' not found.
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.282 ...\linewidth]{../Figures/P4/ridge_best.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-[6] [7
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-] (./writeup.aux)
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-LaTeX Warning: There were multiply-defined labels.
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
- ) 
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+                 
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.133 \min \frac{1}{2} ||w||^2 &
+                                \\
+(That makes 100 errors; please try again.) 
 Here is how much of TeX's memory you used:
- 4181 strings out of 493089
- 60978 string characters out of 6134842
- 126364 words of memory out of 5000000
- 7551 multiletter control sequences out of 15000+600000
+ 4162 strings out of 493089
+ 60759 string characters out of 6134842
+ 127327 words of memory out of 5000000
+ 7547 multiletter control sequences out of 15000+600000
  44922 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,5n,38p,1385b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
-/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/time
-s/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.
-pfb>
-Output written on writeup.pdf (7 pages, 113346 bytes).
-PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 38i,5n,38p,1121b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+!  ==> Fatal error occurred, no output PDF file produced!

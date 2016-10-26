@@ -122,171 +122,58 @@ J(\theta_t; x^{(i)}, y^{(i)}) = (x^{(i)T} \theta_t - y^{(i)})^2
 
 \section{\uppercase{Support Vector Machines}}
 
-Support Vector Machines are a method for classification where some examples of the training data are used to classify new points. SVM's try to maximize the margin between the decision boundary and the closest training examples. This is to help the classifier generalize better to unseen data and to make it more robust to noise. SVM's aim to maximize the size of the margin, while making sure that each training sample is properly classified. The introduction of a slack variable, (insert slack), allows the misclassify some training samples. With the slack variables, the objective function becomes:
+Support Vector Machines are supervised learning models that work by finding a dividing hyperplane between the training data while maximizing the gap between the training data and the decision boundary. This is to help the classifier generalize better and makes it more robust to noise. Assuming the data is linearly separable, finding this dividing hyperplane amounts to solving the quadratic program
+
+\begin{equation}
+\min_{w,b} \frac{1}{2} ||w||^2 s.t. y^i(w^T x^i + b) \gte 1, 1 \lte i \lte n
+\end{equation}
+
+\begin{equation}
+\begin{array}{ll@{}ll}
+\min \frac{1}{2} ||w||^2 &\\
+\text{s.t.} y^i(w^T x^i + b) \gte 1, 1 \lte i \lte n
+\end{array}
+\end{equation}
+
+where $w$ is the vector perpendicular to the dividing hyperplane and $\frac{1}{||w||}$ is the size of the margin.
+
+If the data is almost but not completely linearly separable, we can still model the data with an SVM by introducing slack variables when solving for a classifier. We allow the training points to be misclassified by some amount $e$ and the goal is to maximize the margin while minimizing the slack. This formulation is called C-SVM and the separating hyperplane can be found by solving the quadratic program 
+
+\begin{equation}
+\min_{w,b} \frac{1}{2} ||w||^2 s.t. y^i(w^T x^i + b) \gte 1, 1 \lte i \lte n
+\end{equation}
+
+ The introduction of a slack variable, (insert slack), allows the misclassify some training samples. With the slack variables, the objective function becomes:
 
 In the supervised learning problem of regression, we are given a set of $n$ data points and $n$ target values and the goal is to find a function that relates $x$ to $y$. We have to do this in such a way that this function generalizes well to unseen values of $x$. Linear Basis Function Regression aims to find the optimal linear combination of basis functions to create a function mapping $x$ to $y$. This linear combination is expressed as a vector of weights for each of these basis functions. These basis functions take the form
 
-\begin{equation}
-\phi_i(x) = x^i,  \forall i \in [0,M]
-\end{equation}
+\subsection{Blah}
 
-We evaluated different methods of finding the optimal weight vector, $w$. To do this, we generated 11 points from $y(x) = \cos(\pi x)+1.5 \cos(2 \pi x)$ with some added noise. 
 
-\subsection{Closed Form Solution}
+\subsection{Blah2}
 
-From the textbook, we know the closed form solution for the maximum likelihood weight vector given data values $X$, target values $Y$, and the value of $M$, where $M$ is the highest order polynomial in our polynomial basis. The closed form solution for the maximum likelihood weight vector is
-\begin{equation}
-(\phi^T \phi)^{-1} \phi^T Y
-\end{equation}
-where $\phi$ is the design matrix. We tested our solution by plotting the polynomials our models generated against the $11$ data points. As can be seen in figures 4-7, when $M$ is larger the higher polynomial model overfits to the data. We found the optimal $M$ to be $4$.
 
-\begin{figure}[h]
-  \includegraphics[width=\linewidth]{../Figures/P2/P2.1/M=1.png}
-  \caption{}
-  \label{fig:gradient_converging}
-\end{figure}
+\subsection{Section?}
 
-\begin{figure}[h]
-  \includegraphics[width=\linewidth]{../Figures/P2/P2.1/M=3.png}
-  \caption{}
-  \label{fig:gradient_converging}
-\end{figure}
 
-\begin{figure}[h]
-  \includegraphics[width=\linewidth]{../Figures/P2/P2.1/M=6.png}
-  \caption{}
-  \label{fig:gradient_converging}
-\end{figure}
-
-\begin{figure}[h]
-  \includegraphics[width=\linewidth]{../Figures/P2/P2.1/M=8.png}
-  \caption{}
-  \label{fig:gradient_converging}
-\end{figure}
-
-\subsection{Objective Function}
-
-The objective function we were trying to minimize was Sum Squared Error. The function and its derivative are 
-
-\begin{equation}
-f(x) = \frac{1}{2} \sum_{n=1}^{N} (y_n - w^T \phi(x_n))^2
-\end{equation}
-\begin{equation}
-\bigtriangledown f(x) = \sum_{n=1}^{N} (y_n - w^T \phi(x_n)) \phi(x_n)^T
-\end{equation}
-
-. We then used our gradient descent algorithms to find the weight vector that minimized the Sum Squared error. 
-
-\subsection{Batch vs Stochastic Gradient Descent}
-
-We tested different combinations of convergence criterion, step size, initial guess, and M. We found that with batch gradient descent, a step size of $0.1$ achieved the best results. The algorithm achieved lower costs on the cost function and required less iterations than smaller step sizes. Values lower than that would cause the algorithm to converge to a suboptimal value, and values higher than that caused the algorithm to oscillate and fail. We believe that this is because the loss function is less sensitive to changes, allowing for larger step sizes without oscillation. Additionally, we believe that this insensitivity to changes makes it easy for the function to have nearly identical values on successive iterations when the step size is small, causing the algorithm to converge to suboptimal weights. A lower convergence criterion led to better results, but came with the tradeoff of longer convergence times. For example, with $M=4$ and a step size of $.01$, lowering the convergence criterion from $10^{-6}$ to $10^{-7}$ quintupled the number of iterations needed and improved the cost by $.02$. We initialized our parameter vector at random and it didn't affect the converged values of the algorithm. We believe this is because the function we are minimizing is convex, thus the algorithm always moves towards the minimum and eventually converges to it. 
-
-With Stochastic Gradient Descent, we found similar trends. Lowering the convergence criterion led to lower costs but more iterations. Increasing the step size (with a max value of 1) generally led to lower costs. A step size of 1 would sometimes give the best results, but other times it caused the algorithm to oscillate and fail. We initialized our parameter vector at random several times and it didn't affect the converged values of the algorithm.  
-
-Batch gradient descent achieved better results, yielding lower costs in nearly every configuration we tested. However, it took a significant number of more iterations than stochastic gradient descent. It often needed more than $10$ times the number of iterations. 
-
-\subsection{Cosine Basis Functions}
-
-We then tested our function for computing the maximum likelihood weight vector by using our prior knowledge about the origin of the data. We used cosine basis functions instead of polynomial ones. The real values of the function that generated the data are $\cos(\pi x)+1.5 \cos(2 \pi x)$, which means its weight vector would be $[1, 1.5]$. Our calculations yielded $[0.7789928, 1.17413213]$. The plot of our model can be seen in Figure 8.
-
-\begin{figure}[h]
-  \includegraphics[width=\linewidth]{../Figures/P2/P2.3/cosine_graph.png}
-  \caption{Regression using cosine basis.}
-  \label{fig:gradient_converging}
-\end{figure}
-
-\vspace{40mm}
 
 % **************************************************************************************************
  % Problem 3
 % **************************************************************************************************
 
-\section{\uppercase{Ridge Regression}}
+\section{\uppercase{Support Vector Machine with Pegasos}}
 
-Linear regressions, especially those with sum squared error cost functions, are prone to highly overfit the data. One way to ameliorate this is to introduce a regularization term on your weight vector. Ridge regression punishes weight vectors with large sizes. The parameter $\lambda$ controls how much the size of a vector is penalized. 
-
-\subsection{Closed Form Solution}
-
-We tested different values of $\lambda$ on ridge regressions on a small data set. The tested values of $\lambda$ ranging from $1000$ to $.00001$. With very large $\lambda$ values, the weight vector became the zero vector. In general, as $\lambda$ got smaller, the best fit line produced by the regression was able to fit the data better. This is because when $\lambda = 0$, then it is a normal regression problem with a least squares solution. $\lambda$ effectively works as a bias term, the larger it is, the lower the variance of the weight vector. 
+\subsection{Section1?}
 
 
-\subsection{Results}
+\subsection{Section2?}
 
-We decided to evaluate the effect $\lambda$ and $M$ have on unseen data. To evaluate this, we trained several models on a training set, $A$, and then used a validation set to determine what models performed the best. We then calculated the error that each of these selected models had on an unseen test set. The models that performed the best on the test set had very low $\lambda$ values (between $.000001$ and $.0001$) and had $M = 6$. Large $\lambda$ values tended to make the function flatter, even if it had a high order polynomial basis. Low $\lambda$ values allowed the model to fit the data well. Models with different combinations of $\lambda$ and $M$ values are shown in figures 9 - 11. 
-
-
-\begin{figure}[h]
-  \includegraphics[width=\linewidth]{../Figures/P2/P2.3/M=1.png}
-  \caption{$M=1$ with different values for $\lambda$}
-  \label{fig:gradient_converging}
-\end{figure}
-\begin{figure}[h]
-  \includegraphics[width=\linewidth]{../Figures/P2/P2.3/M=3.png}
-  \caption{$M=3$ with different values for $\lambda$}
-  \label{fig:gradient_converging}
-\end{figure}
-\begin{figure}[h]
-  \includegraphics[width=\linewidth]{../Figures/P2/P2.3/M=5.png}
-  \caption{Higher order polynomial basis ($M=5$) with different $\lambda$.}
-  \label{fig:gradient_converging}
-\end{figure}
 
 % **************************************************************************************************
  % Problem 4
 % **************************************************************************************************
 
-\section{\uppercase{LASSO Regression}}
-In some applications, we have reason to believe the underlying function generating the data has sparse weights. In this case, using the $l_1$ norm for regularization, LASSO regression, can perform better than using the $l_2$ norm in ridge regression. To demonstrate this, we have a dataset generated according to 
-\begin{equation}
-y = w_{true}^T \phi (x) + \epsilon
-\end{equation}
-$\epsilon$ is some error and $\phi (x)$ is a basis vector defined as 
-\begin{equation}
-\phi(x) = (x, \sin(0.4 \pi x * 1), ..., \sin(0.4 \pi x * 12))
-\end{equation}
-
-$w_{true}^T$ is a vector with sparse weights. We will try to estimate them from the training data by performing batch gradient descent to minimize the following objective function for LASSO:
-\begin{equation}
-\frac{1}{n} \sum_{i=1}^{n} (y^{(i)} - w^T \phi(x^{(i)}))^2 + \lambda \sum_{j=1}^{M} |w_j|
-\end{equation}
-
-Different values of $\lambda$ give different weight estimates. The larger $\lambda$ is, the more sparse the weight estimates will be. Unsurprisingly, when $\lambda$ is extremely large, the weights are all zero. These weight estimates can then be plotted by $y = w_{est}^T \phi (x)$ to see how well they performed against the training data. As you can see in Figure 12, the lower $\lambda$ is, the more closely the function matches the training data.
-
-Then, from all possible $\lambda, w_{est}$ pairs, we used to validation dataset to choose the pair that performed best. The best $\lambda$ was $10^{-2.55}$ and it yielded an average squared error from the test dataset of $0.0484489$. It is depicted in Figure 13.
-
-Using a same procedure with ridge regression, we minimize the objective function
-\begin{equation}
-\frac{1}{n} \sum_{i=1}^{n} (y^{(i)} - w^T \phi(x^{(i)}))^2 + \lambda \sum_{j=1}^{M} (w_j)^2
-\end{equation}
-generate weight estimates, and plot them against the sample data. In figure 14, we see weight estimates from different lambdas plotted against the training data.
-
-Figure 15 plots the best ridge regression as selected from the validation data set. It is clear the ridge regression performs much worse than LASSO. In fact, the average squared error is $0.635523$, 50\% more than LASSO. LASSO was much better at guessing the sparse true weights.
-
-\begin{figure}[h]
-  \includegraphics[width=\linewidth]{../Figures/P4/lasso_varying.png}
-  \caption{LASSO weight estimates from varying $\lambda$s graphed against training data.}
-  \label{fig:lasso_varying}
-\end{figure}
-
-\begin{figure}[h]
-  \includegraphics[width=\linewidth]{../Figures/P4/lasso_best.png}
-  \caption{Best LASSO weight estimate.}
-  \label{fig:lasso_best}
-\end{figure}
-
-\begin{figure}[h]
-  \includegraphics[width=\linewidth]{../Figures/P4/ridge_varying.png}
-  \caption{Ridge regression weight estimates from varying $\lambda$s graphed against training data.}
-  \label{fig:ridge_varying}
-\end{figure}
-
-\begin{figure}[h]
-  \includegraphics[width=\linewidth]{../Figures/P4/ridge_best.png}
-  \caption{Best ridge regression weight estimate.}
-  \label{fig:ridge_best}
-\end{figure}
-
-
+\section{\uppercase{Handwritten Digit Recognition with MNIST}}
 
 
 \vfill
