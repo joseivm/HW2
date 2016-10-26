@@ -116,27 +116,64 @@ if __name__ == "__main__":
 	C = 10**8
 	# Cs = [.0001,.001,.01,.1,1,10,100,1000,10000]
 	step_size = 10**-2
+
 	convergence_criterion = 10**-3
 
 
 	# w,I,S = trainBatchGradientDescent(X, Y, step_size, convergence_criterion,0,275000)
-	w1,I1,S1 = trainBatchGradientDescent(X, Y, step_size, convergence_criterion,1,500000)
+	# w1,I1,S1 = trainBatchGradientDescent(X, Y, step_size, convergence_criterion,1,500000)
 	# diff = len(I)-len(I1)
 	# conv_val = S1[len(I1)-1]
 	# rest = conv_val*np.ones(diff)
 	# S1 = np.concatenate((S1,rest),axis=0)
+	validate = loadtxt('data/data'+name+'_validate.csv')
+	# What I have to do: train a bunch of models, see which ones perform best on the validation set,
+	# Test top 5 on Test Set
 
-	# for i in [-3,-2,-1,0,1,2,3]:
-	# 	C = 10**i
-	# 	s = 1
-	# 	if i < 0 : s = 10**np.abs(i)
-	# 	w, model = trainLRL2norm(X,Y,C,s)
-	# 	CER = 1- model.score(X,Y)
-	# 	print 'lambda =', 1.0/C, 'Scaling:',s, 'CER:', CER, "w:", w, "norm:", np.linalg.norm(w)
-	# 	predictLR = constructPredictLR(w)
-	# 	title = "lambda = "+str(1.0/C)+" LR2"
-	# 	plotDecisionBoundary(X, Y, predictLR, [0], title = title)
-	# 	pl.show()
+	test = loadtxt('data/data'+name+'_test.csv')
+	Xt = test[:,0:2]
+	Yt = test[:,2:3]
+
+	Xv = validate[:,0:2]
+	Yv = validate[:,2:3]
+	cost_dict = {}
+	for i in range(-4,5):
+		C = 10**i
+		s = 1
+		if i < 0 : s = 10**np.abs(i)
+		w, model = trainLRL1norm(X,Y,C,s)
+		w2, model2 = trainLRL2norm(X,Y,C,s)
+
+		CER1 = 1- model.score(Xv,Yv)
+		CER2 = 1- model2.score(Xv,Yv)
+		a = (str(CER1),i)
+		b = (str(CER2),i+1)
+		cost_dict[a] = (model,C,'L1')
+		cost_dict[b] = (model2,C,'L2')
+
+	print len(cost_dict)
+	# vals_to_test = []
+	# l = 0
+	# while (l<11):
+
+	# 	min_el = min(cost_dict)
+	# 	vals = cost_dict.pop(min_el)
+	# 	vals_to_test.append(vals)
+
+	# for val in vals_to_test:
+	# 	model, C, reg = val
+	# 	acc = model.score(Xt,Yt)
+	# 	print reg, 'lambda =', 1.0/C , "accuracy:", acc
+
+
+
+		# print 'lambda =', 1.0/C, 'Scaling:',s, 'CER:', CER, "w:", w, "norm:", np.linalg.norm(w)
+		# predictLR = constructPredictLR(w)
+		# title = "lambda = "+str(1.0/C)+" LR1"
+		# plotDecisionBoundary(X, Y, predictLR, [0], title = title)
+		# pl.show()
+
+
 
 	# print " "
 	# for i in [-5,-4,-3,-2,-1,0,1,2,3,4,5]:
@@ -149,14 +186,14 @@ if __name__ == "__main__":
 	# print w2, np.linalg.norm(w2)
 
 	# pl.plot(I,S,'b',label= "lambda = 0")
-	pl.plot(I1,S1,'r', label= "lambda = 1")
+	# pl.plot(I1,S1,'r', label= "lambda = 1")
 
-	pl.legend(loc='best')
+	# pl.legend(loc='best')
 	# predictLR = constructPredictLR(w)
 
 	# plot training results
 	# plotDecisionBoundary(X, Y, predictLR, [0], title = 'LR Train')
-	pl.show()
+	# pl.show()
 
 
 	# print '======Validation======'
