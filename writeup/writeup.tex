@@ -35,85 +35,10 @@
 
 \noindent To investigate how regularization affected the logistic regression we tried lambda values of 0 and 1. We decided not to penalize the bias term in the weight vector. As expected, we found that with a lambda value of 1 the weight vector decreased in every iteration of the algorithm. 
 
-\medskip
-\noindent Negative Gaussian:
-\begin{equation}
-f(x) = - \frac{1}{\sqrt{(2\pi)^n |\Sigma|}} exp[-\frac{1}{2} (x-u)^T\Sigma^{-1}(x-u)]
-\end{equation}
-\begin{equation}
-\frac{\partial f(x)}{\partial x} = -f(x) \Sigma^{-1} (x-u)
-\end{equation}
 
-\noindent Quadratic Bowl:
-\begin{equation}
-f(x) = \frac{1}{2} x^T A x - x^T b
-\end{equation}
-\begin{equation}
-\frac{\partial f(x)}{\partial x} = Ax - b
-\end{equation}
+\subsection{Section1}
 
-\noindent In each iteration, update $x$ according to 
-\begin{equation}
-x_{t+1} = x_{t} - \eta \bigtriangledown f(x)
-\end{equation}
-where $\eta$ is the step size. Use the gradient function above to directly compute the gradient at $x$.
-
-\begin{figure}[h]
-  \includegraphics[width=\linewidth]{../Figures/P1/gradient_converging.png}
-  \caption{Gradient descent on negative gaussian with step size $\eta = 10^7$. The norm of the gradient is converging to zero.}
-  \label{fig:gradient_converging}
-\end{figure}
-
-\begin{figure}[h]
-  \includegraphics[width=\linewidth]{../Figures/P1/gradient_oscillating.png}
-  \caption{Gradient descent on negative gaussian with step size $\eta = 10^7$. The norm of the gradient is oscillating and never converging.}
-  \label{fig:gradient_oscillating}
-\end{figure}
-
-\begin{figure}[h]
-  \includegraphics[width=\linewidth]{../Figures/P1/gradient_diverging.png}
-  \caption{Gradient descent on negative gaussian with step size $\eta = 10^7$. The norm of the gradient is diverging.}
-  \label{fig:gradient_converging}
-\end{figure}
-
-The gradient descent algorithm also takes three structural parameters, the starting guess, step size, and convergence criterion. Each affects the end result of the algorithm. The starting guess is important because gradient descent iteratively follows the gradient. Thus it can get stuck in local minimum. By running the algorithm repeated with random initialization, we increase our chance of finding a global minimum. The step size affects convergence behavior of the algorithm. As shown in figures 1-3, if the step size is too small, the algorithm will converge slowly. If the step size is slightly too big, the algorithm will oscillate. If the step size is much too big, the algorithm will actually diverge. The convergence criterion is used to determine whether the algorithm has converged or not. It is a threshold for the difference in the cost function in two successive iterations. If the difference of the cost function of two successive iterations is less than the convergence criterion, the algorithm is determined to have converged. Decreasing this gives greater accuracy but increases runtime.
-
-\subsection{Central Difference Approximation}
-
-For many objective functions, it is impossible to write a closed form gradient function. Thus, use central difference approxiation to approximate the gradient. For each dimension $i$, estimate its partial derivative by 
-\begin{equation}
-\bigtriangledown_i f(x) = \frac{f(x+d*\hat{\i}) - f(x-d*\hat{\i})}{2d}
-\end{equation}
-for some small $d$. In general, the larger $d$ is, the more inaccurate the gradient approximation is. To check the correctness of our gradient functions, we compared the computed gradient to the numerical approximation of the gradient evaluated with $d=10^{-3}$. Interestingly, for the quadratic bowl function, the numerical approximation is always accurate regardless of how large $d$ is. This is because the derivative of the quadratic bowl is linear in $x$.
-
-\subsection{Batch vs. Stochastic Gradient Descent}
-We used gradient descent to find the parameters $\theta$ that minimized the least squared error objective function
-\begin{equation}
-J(\theta) = ||X\theta - y||^2
-\end{equation}
-where each row of $X$ and $y$ is a data sample pair. 
-
-In batch gradient descent, $\theta$ is updated with the gradient of the cost function for the entire training dataset.
-We used the gradient function
-\begin{equation}
-\bigtriangledown_\theta J(\theta) = 2X(X\theta - y)
-\end{equation}
-
-Using a step size of $0.01$ and a convergence criterion of $10^-8$, the quadratic bowl function converges in $179$ iterations. The dataset had $100$ points so it took $17900$ point wise gradient evaluations.
-
-In contrast, stochastic gradient descent updates $\theta$ with the gradient of the cost function for each data point. $\theta$ is updated according to 
-\begin{equation}
-\theta_{t+1} = \theta_t - \eta_t \bigtriangledown_\theta J(\theta_t; x^{(i)}, y^{(i)})
-\end{equation}
-where $\eta$ is the learning rate and
-\begin{equation}
-J(\theta_t; x^{(i)}, y^{(i)}) = (x^{(i)T} \theta_t - y^{(i)})^2
-\end{equation}
-\begin{equation}
-\bigtriangledown_\theta J(\theta_t; x^{(i)}, y^{(i)}) = 2(x^{(i)T} \theta_t - y^{(i)}) x^{(i)}.
-\end{equation}
-
- We iterate through the entire dataset for $n$ rounds and for each round, we iterate through the data points in a different order. We converge when the cost between rounds decreases by less than a certain threshold. The stochastic gradient descent took $200000$ pointwise gradient evaluations. The batch gradient descent performed much faster to achieve the same level of convergence but in practice, it is sometimes infeasible to compute gradients on large datasets. For such datasets, stochastic gradient descent can be the best option.
+\subsection{Section2}
 
 
 % **************************************************************************************************
@@ -124,14 +49,21 @@ J(\theta_t; x^{(i)}, y^{(i)}) = (x^{(i)T} \theta_t - y^{(i)})^2
 
 Support Vector Machines are supervised learning models that work by finding a dividing hyperplane between the training data while maximizing the gap between the training data and the decision boundary. This is to help the classifier generalize better and makes it more robust to noise. Assuming the data is linearly separable, finding this dividing hyperplane amounts to solving the quadratic program
 
-\begin{equation}
-\min_{w,b} \frac{1}{2} ||w||^2 s.t. y^i(w^T x^i + b) \gte 1, 1 \lte i \lte n
-\end{equation}
+% \begin{equation}
+% \min_{w,b} \frac{1}{2} ||w||^2 s.t. y^i(w^T x^i + b) \gte 1, 1 \lte i \lte n
+% \end{equation}
+
+% \begin{equation}
+% \begin{array}
+% min \frac{1}{2} ||w||^2 &\\
+% s.t. y^i(w^T x^i + b) \geq 1, 1 \leq i \leq n
+% \end{array}
+% \end{equation}
 
 \begin{equation}
 \begin{array}{ll@{}ll}
-\min \frac{1}{2} ||w||^2 &\\
-\text{s.t.} y^i(w^T x^i + b) \gte 1, 1 \lte i \lte n
+\text{min}  & \displaystyle \frac{1}{2} ||w||^2 &\\
+\text{s. t.}& \displaystyle y^i(w^T x^i + b) \geq 1 , 1 \leq i \leq n
 \end{array}
 \end{equation}
 
@@ -139,9 +71,9 @@ where $w$ is the vector perpendicular to the dividing hyperplane and $\frac{1}{|
 
 If the data is almost but not completely linearly separable, we can still model the data with an SVM by introducing slack variables when solving for a classifier. We allow the training points to be misclassified by some amount $e$ and the goal is to maximize the margin while minimizing the slack. This formulation is called C-SVM and the separating hyperplane can be found by solving the quadratic program 
 
-\begin{equation}
-\min_{w,b} \frac{1}{2} ||w||^2 s.t. y^i(w^T x^i + b) \gte 1, 1 \lte i \lte n
-\end{equation}
+% \begin{equation}
+% \min_{w,b} \frac{1}{2} ||w||^2 s.t. y^i(w^T x^i + b) \gte 1, 1 \lte i \lte n
+% \end{equation}
 
  The introduction of a slack variable, (insert slack), allows the misclassify some training samples. With the slack variables, the objective function becomes:
 
