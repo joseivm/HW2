@@ -66,17 +66,6 @@ Higher lambda values decreased the weights of the weight vector in both models. 
 
 Support Vector Machines are supervised learning models that work by finding a dividing hyperplane between the training data while maximizing the gap between the training data and the decision boundary. This is to help the classifier generalize better and makes it more robust to noise. Assuming the data is linearly separable, finding this dividing hyperplane amounts to solving the quadratic program
 
-% \begin{equation}
-% \min_{w,b} \frac{1}{2} ||w||^2 s.t. y^i(w^T x^i + b) \gte 1, 1 \lte i \lte n
-% \end{equation}
-
-% \begin{equation}
-% \begin{array}
-% min \frac{1}{2} ||w||^2 &\\
-% s.t. y^i(w^T x^i + b) \geq 1, 1 \leq i \leq n
-% \end{array}
-% \end{equation}
-
 \begin{equation}
 \begin{array}{ll@{}ll}
 \text{min}  & \displaystyle \frac{1}{2} ||w||^2 &\\
@@ -139,42 +128,116 @@ b = 0
 
 $Diag(\overrightarrow{y})$ is a diagonal matrix with $y^{(i)}$s on the diagonal.
 
-This solver returns $\overrightarrow{x}$ which is our $\overrightarrow{\alpha}$ vector. Testing this implementation,
+This solver returns $\overrightarrow{x}$ which is our $\overrightarrow{\alpha}$ vector.
 
-Do the stupid example!
+Testing this implementation, we created a dataset with four points. The positive examples were $(2, 2),(2, 3)$ and the negative examples where $(0, -1),(-3, -2)$. The solver returned
+\begin{equation}
+\overrightarrow{\alpha} = [1.54e-01, 7.02e-08, 1.54e-01, 9.15e-09]
+\end{equation}
+
+Notice how $\alpha_1$ and $\alpha_3$ are much larger than the rest. This means that these two are the support vectors and they correspond to points $(2,2)$ and $(0,-1)$. The graph of the decision boundary for this small example is shown in figure ? and the support vectors are the points predicted.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=60 mm]{Figures/P2/dumb.png}
+    \caption{SVM with linear kernel on four data points. }
+\end{figure}
+
+
 
 \subsection{2D Dataset Results}
+
+We used our implementation of SVM to classify 2D points and generated plots of the decision boundary and the margins. Figure ? shows SVM run on four different training sets with linear kernels and a slack penalty, $C$, of 1. It is clear the datasets 1 and 3 are meant to be separated by a linear function while datasets 2 and 4 are not. Thus only the separating decision boundary for 1 and 3 are reasonable. The table below shows the training, validation, and test classification error rates. Unsurprisingly, datasets 2 and 4 have terrible classifications rates.
 
 \begin{figure}
         \begin{subfigure}[b]{0.25\textwidth}
                 \centering
                 \includegraphics[width=\linewidth]{Figures/P2/svm_data1_test_C1.png}
-                \caption{A gull}
-                \label{fig:gull}
+                \caption{Dataset 1, C=1}
         \end{subfigure}%
         \begin{subfigure}[b]{0.25\textwidth}
                 \centering
                 \includegraphics[width=\linewidth]{Figures/P2/svm_data2_test_C1.png}
-                \caption{A gull2}
-                \label{fig:gull2}
+                \caption{Dataset 2, C=1}
         \end{subfigure}%
         \begin{subfigure}[b]{0.25\textwidth}
                 \centering
                 \includegraphics[width=\linewidth]{Figures/P2/svm_data3_test_C1.png}
-                \caption{A tiger}
-                \label{fig:tiger}
+                \caption{Dataset 3, C=1}
         \end{subfigure}%
         \begin{subfigure}[b]{0.25\textwidth}
                 \centering
                 \includegraphics[width=\linewidth]{Figures/P2/svm_data4_test_C1.png}
-                \caption{A mouse}
-                \label{fig:mouse}
+                \caption{Dataset 4, C=1}
         \end{subfigure}
-        \caption{Pictures of animals}\label{fig:animals}
+        \caption{Linear SVM perfomance of different datasets. Datasets 1 and 3 are relatively linearly separable so this SVM performs well on them. Dataset 2 and 4 are definitely not linearly separable so this SVM is not the right model for the data.}\label{fig:animals}
 \end{figure}
 
+\begin{center}
+ \begin{tabular}{||c c c c||} 
+ \hline
+  & Training Error & Validation Error & Test Error \\ [0.5ex] 
+ \hline\hline
+ Dataset 1 & 0 & 0 & 0 \\ 
+ \hline
+ Dataset 2 & 0.1775 & 0.18 & 0.195 \\
+ \hline
+ Dataset 3 & 0.02 & 0.03 & 0.045 \\
+ \hline
+ Dataset 4 & 0.3 & 0.305 & 0.3 \\
+ \hline
+\end{tabular}
+\end{center}
 
 \subsection{2D Dataset Results with Kernel Functions}
+
+Support Vector Machines can still be used to classify not linearly separable data. To do this, we need to either map the data points to higher dimensions or use a nonlinear kernel. To obtain a better classification for dataset 4, we used a Gaussian radial basis function (RBF) kernel with $\gamma = 1$. The result is shown in figure b of figure ? and it achieved a test error rate $4.75\%$.
+
+
+\subsection{Effect of C on Margin}
+The amount of penalty $C$ given to the slack variables can have a large impact on the size of the margin. The small $C$ is, the more the algorithm is willing to give slack to the data points. Thus the size of the margin will increase. As $C$ goes to infinity, the boundary becomes more and more like Hard-SVM. 
+
+This relationship between $C$ and the margin size is true for both linear and nonlinear kernels. In figure ?, the graphs with linear kernels are in order of increasing $C$. We can clearly see the margin is decreasing in size. In figure ?, the graphs with nonlinear kernels also have decreasing margin size with increasing $C$. As the margin decreases, the number of support vectors, that is the number of vectors that are within or on the the margin or the number of points with nonzero $\alpha$s, also decreases. This is clear because less points fall on the wrong side of their margin boundary. Thus as $C$ increases, the number of support vectors decrease. 
+
+When optimizing and choosing a $C$, maximizing the geometric margin should not be the goal. The goal should instead be minimizing the error rate in the validation set. A large geometric margin is not related to a low error rate. In fact, a large geometric margin means lots of support vectors which leads to slow runtimes. 
+
+\begin{figure}[h]
+        \begin{subfigure}[b]{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P2/svm_data1_test_C-2.png}
+                \caption{Dataset 1, C=0.01}
+        \end{subfigure}%
+        \begin{subfigure}[b]{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P2/svm_data1_test_C1.png}
+                \caption{Dataset 1, C=1}
+        \end{subfigure}%
+        \begin{subfigure}[b]{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P2/svm_data1_test_C100.png}
+                \caption{Dataset 1, C=100}
+        \end{subfigure}%
+        \caption{Decision boundary for SVM with linear kernel. The margin clearly gets smaller for large C}
+\end{figure}
+
+\begin{figure}[h]
+        \begin{subfigure}[b]{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P2/RBF_data4_test_g1C-2.png}
+                \caption{Dataset 4, C=0.01}
+        \end{subfigure}%
+        \begin{subfigure}[b]{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P2/RBF_data4_test_g1C1.png}
+                \caption{Dataset 4, C=1}
+        \end{subfigure}%
+        \begin{subfigure}[b]{0.33\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P2/RBF_data4_test_g1C100.png}
+                \caption{Dataset 4, C=100}
+        \end{subfigure}%
+        \caption{Decision boundary for SVM with Gaussian RBF kernel. In figure a, the margins are so big they almost do not show up in the graph. By figure c, they have shrunk considerably closer to the decision boundary.}
+\end{figure}
 
 
 
@@ -195,7 +258,13 @@ Do the stupid example!
 % **************************************************************************************************
 
 \section{\uppercase{Handwritten Digit Recognition with MNIST}}
+Using the three classification algorithms we developed in this paper, we attempted to classify hand-written digits from the MNIST dataset and compared their performances. Since all the algorithms performed only two-way classification, our goal was to distinguish a certain set of digits for another set of digits. Images of digits from one set were labeled $1$ and while digits from the other set were labeled $-1$.
 
+The training sets used consisted of 200 images of each digit to be classified. Validation and test sets contained 150 for each digit. Each 28 X 28 image was treated as an vector of length 784. We tried the following classfication tasks,  1 vs 7, 3 vs 5, 4 vs 9, (0, 2, 4, 6, 8) vs (1, 3, 5, 7, 9) and also explored the effect of normalizing the image vectors on an algorithm ability to classify the digits. Normalizing a pixel means taking its 0-255 value and mapping it to the range $[-1,1]$. 
+
+\subsection{Logistic Regression vs Linear SVM}
+
+\subsection{Effect of C on Margin}
 
 \vfill
 \end{document}

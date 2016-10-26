@@ -6,10 +6,10 @@ import numpy as np
 # import your SVM training code
 
 def kernel(x1,x2):
-    # return np.dot(x1,x2)
+    return np.dot(x1,x2)
     # return 1+np.dot(x1.T, x2)+np.dot(x1.T, x2)**2
-    g = 1
-    return np.exp(-g * np.linalg.norm(x1-x2)**2)
+    # g = 1
+    # return np.exp(-g * np.linalg.norm(x1-x2)**2)
 
 def trainSVM(X,Y,C):
     # Carry out training, primal and/or dual
@@ -97,44 +97,47 @@ def evaluatePredict(X, Y, predict):
 
 if __name__ == "__main__":
     # parameters
-    name = '4'
-    C = 10**0
+    name = '1'
+    C = 10**2
     print '======Training======'
     # load data from csv files
     train = loadtxt('data/data'+name+'_train.csv')
     # use deep copy here to make cvxopt happy
-    X = train[:, 0:2].copy()
-    Y = train[:, 2:3].copy()
+    # X = train[:, 0:2].copy()
+    # Y = train[:, 2:3].copy()
+    X = np.array([[2,2], [2,3], [0,-1], [-3,-2]])
+    Y = np.array([[1,1,-1,-1]]).T
 
     alpha = trainSVM(X,Y,C)
+    print alpha
 
     predictSVM = constructPredictSVM(X, Y, alpha)
 
     # plot training results
     plotDecisionBoundary(X, Y, predictSVM, [-1, 0, 1], title = 'SVM Train')
 
-    evaluatePredict(X,Y, predictSVM)
+    # evaluatePredict(X,Y, predictSVM)
 
 
-    print '======Validation======'
-    # load data from csv files
-    validate = loadtxt('data/data'+name+'_validate.csv')
-    X = validate[:, 0:2]
-    Y = validate[:, 2:3]
-    # plot validation results
-    plotDecisionBoundary(X, Y, predictSVM, [-1, 0, 1], title = 'SVM Validate')
+    # print '======Validation======'
+    # # load data from csv files
+    # validate = loadtxt('data/data'+name+'_validate.csv')
+    # X = validate[:, 0:2]
+    # Y = validate[:, 2:3]
+    # # plot validation results
+    # plotDecisionBoundary(X, Y, predictSVM, [-1, 0, 1], title = 'SVM Validate')
 
-    evaluatePredict(X,Y, predictSVM)
+    # evaluatePredict(X,Y, predictSVM)
 
-    print '======Testing======'
-    # load data from csv files
-    test = loadtxt('data/data'+name+'_test.csv')
-    X = test[:, 0:2]
-    Y = test[:, 2:3]
-    # plot validation results
-    plotDecisionBoundary(X, Y, predictSVM, [-1, 0, 1], title = 'SVM Test')
+    # print '======Testing======'
+    # # load data from csv files
+    # test = loadtxt('data/data'+name+'_test.csv')
+    # X = test[:, 0:2]
+    # Y = test[:, 2:3]
+    # # plot validation results
+    # plotDecisionBoundary(X, Y, predictSVM, [-1, 0, 1], title = 'SVM Test')
 
-    evaluatePredict(X,Y, predictSVM)
+    # # evaluatePredict(X,Y, predictSVM)
 
 
 

@@ -74,7 +74,7 @@ def openMisclassifications(X,Y,misclassifications):
 
 
 C_SVM = [10**0, 10**1, 10**2]
-C_LR = [10**0, 10**1, 10**2]
+C_LR = [10**0]
 lambds = [2**-10]
 max_iter = 500
 
@@ -89,17 +89,17 @@ testX, testY = buildTestSet(pos_digits,neg_digits)
 
 print '======Training======'
 predicts = []
-# for C in C_LR:
-#     predict = buildLRPredict(trainX, trainY, C)
-#     predicts.append((C, predict))
-for C in C_SVM:
-    predict = buildSVMPredict(trainX, trainY, C)
-    predicts.append((C,predict))
+for C in C_LR:
+    predict = buildLRPredict(trainX, trainY, C)
+    predicts.append((C, predict))
+# for C in C_SVM:
+#     predict = buildSVMPredict(trainX, trainY, C)
+#     predicts.append((C,predict))
 # for lambd in lambds:
 #     predict = buildPegasosPredict(trainX, trainY, lambd, max_iter)
 #     predicts.append((lambd,predict))
 
-# misclassifications = evaluatePredict(trainX, trainY, predict)
+misclassifications = evaluatePredict(trainX, trainY, predict)
 # openMisclassifications(trainX, trainY, misclassifications)
 
 print '======Validation======'
@@ -118,7 +118,7 @@ print '======Best Validation======'
 print "Param: ", bestParam
 print "Misclassification rate: ", bestmisclassrate
 print "Misclassifications: ", bestmisclassifications
-openMisclassifications(valX, valY, bestmisclassifications)
+# openMisclassifications(valX, valY, bestmisclassifications)
 
 print '======Testing======'
 misclassrate,misclassifications = evaluatePredict(testX, testY, bestpredict)

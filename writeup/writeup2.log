@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 OCT 2016 03:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 OCT 2016 05:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -484,60 +484,115 @@ ptmcm/m/it/10 modelwithlambdavaluesrangingfrom\OT1/ptmcm/m/n/10 10[]5\OML/ptmcm
 [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] <Figures/P2/svm_data1_test_C1.png, id=16, 578.16pt x 433.62pt>
+[2] <Figures/P2/dumb.png, id=16, 578.16pt x 433.62pt>
+File: Figures/P2/dumb.png Graphic file (type png)
+
+<use Figures/P2/dumb.png>
+Package pdftex.def Info: Figures/P2/dumb.png used on input line 142.
+(pdftex.def)             Requested size: 170.71652pt x 128.03589pt.
+
+<Figures/P2/svm_data1_test_C1.png, id=18, 578.16pt x 433.62pt>
 File: Figures/P2/svm_data1_test_C1.png Graphic file (type png)
 
 <use Figures/P2/svm_data1_test_C1.png>
 Package pdftex.def Info: Figures/P2/svm_data1_test_C1.png used on input line 15
-1.
+5.
 (pdftex.def)             Requested size: 117.43875pt x 88.07884pt.
 
-<Figures/P2/svm_data2_test_C1.png, id=18, 578.16pt x 433.62pt>
+<Figures/P2/svm_data2_test_C1.png, id=19, 578.16pt x 433.62pt>
 File: Figures/P2/svm_data2_test_C1.png Graphic file (type png)
 
 <use Figures/P2/svm_data2_test_C1.png>
-Package pdftex.def Info: Figures/P2/svm_data2_test_C1.png used on input line 15
-7.
+Package pdftex.def Info: Figures/P2/svm_data2_test_C1.png used on input line 16
+0.
 (pdftex.def)             Requested size: 117.43875pt x 88.07884pt.
 
-<Figures/P2/svm_data3_test_C1.png, id=19, 578.16pt x 433.62pt>
+<Figures/P2/svm_data3_test_C1.png, id=20, 578.16pt x 433.62pt>
 File: Figures/P2/svm_data3_test_C1.png Graphic file (type png)
 
 <use Figures/P2/svm_data3_test_C1.png>
 Package pdftex.def Info: Figures/P2/svm_data3_test_C1.png used on input line 16
-3.
+5.
 (pdftex.def)             Requested size: 117.43875pt x 88.07884pt.
 
-<Figures/P2/svm_data4_test_C1.png, id=20, 578.16pt x 433.62pt>
+<Figures/P2/svm_data4_test_C1.png, id=21, 578.16pt x 433.62pt>
 File: Figures/P2/svm_data4_test_C1.png Graphic file (type png)
 
 <use Figures/P2/svm_data4_test_C1.png>
-Package pdftex.def Info: Figures/P2/svm_data4_test_C1.png used on input line 16
-9.
+Package pdftex.def Info: Figures/P2/svm_data4_test_C1.png used on input line 17
+0.
 (pdftex.def)             Requested size: 117.43875pt x 88.07884pt.
- [3 <./Figures/P2/svm_data1_test_C1.png> <./Figures/P2/svm_data2_test_C1.png> <
-./Figures/P2/svm_data3_test_C1.png> <./Figures/P2/svm_data4_test_C1.png>] (./wr
-iteup2.aux) ) 
+ [3 <./Figures/P2/dumb.png> <./Figures/P2/svm_data1_test_C1.png> <./Figures/P2/
+svm_data2_test_C1.png> <./Figures/P2/svm_data3_test_C1.png> <./Figures/P2/svm_d
+ata4_test_C1.png>]
+<Figures/P2/svm_data1_test_C-2.png, id=30, 578.16pt x 433.62pt>
+File: Figures/P2/svm_data1_test_C-2.png Graphic file (type png)
+
+<use Figures/P2/svm_data1_test_C-2.png>
+Package pdftex.def Info: Figures/P2/svm_data1_test_C-2.png used on input line 2
+07.
+(pdftex.def)             Requested size: 155.02pt x 116.26514pt.
+File: Figures/P2/svm_data1_test_C1.png Graphic file (type png)
+ <use Figures/P2/svm_data1_test_C1.png>
+Package pdftex.def Info: Figures/P2/svm_data1_test_C1.png used on input line 21
+2.
+(pdftex.def)             Requested size: 155.02pt x 116.26514pt.
+
+<Figures/P2/svm_data1_test_C100.png, id=31, 578.16pt x 433.62pt>
+File: Figures/P2/svm_data1_test_C100.png Graphic file (type png)
+
+<use Figures/P2/svm_data1_test_C100.png>
+Package pdftex.def Info: Figures/P2/svm_data1_test_C100.png used on input line 
+217.
+(pdftex.def)             Requested size: 155.02pt x 116.26514pt.
+
+<Figures/P2/RBF_data4_test_g1C-2.png, id=32, 578.16pt x 433.62pt>
+File: Figures/P2/RBF_data4_test_g1C-2.png Graphic file (type png)
+
+<use Figures/P2/RBF_data4_test_g1C-2.png>
+Package pdftex.def Info: Figures/P2/RBF_data4_test_g1C-2.png used on input line
+ 226.
+(pdftex.def)             Requested size: 155.02pt x 116.26514pt.
+
+<Figures/P2/RBF_data4_test_g1C1.png, id=33, 578.16pt x 433.62pt>
+File: Figures/P2/RBF_data4_test_g1C1.png Graphic file (type png)
+
+<use Figures/P2/RBF_data4_test_g1C1.png>
+Package pdftex.def Info: Figures/P2/RBF_data4_test_g1C1.png used on input line 
+231.
+(pdftex.def)             Requested size: 155.02pt x 116.26514pt.
+
+<Figures/P2/RBF_data4_test_g1C100.png, id=34, 578.16pt x 433.62pt>
+File: Figures/P2/RBF_data4_test_g1C100.png Graphic file (type png)
+
+<use Figures/P2/RBF_data4_test_g1C100.png>
+Package pdftex.def Info: Figures/P2/RBF_data4_test_g1C100.png used on input lin
+e 236.
+(pdftex.def)             Requested size: 155.02pt x 116.26514pt.
+ [4 <./Figures/P2/svm_data1_test_C-2.png> <./Figures/P2/svm_data1_test_C100.png
+> <./Figures/P2/RBF_data4_test_g1C-2.png> <./Figures/P2/RBF_data4_test_g1C1.png
+> <./Figures/P2/RBF_data4_test_g1C100.png>] [5] (./writeup2.aux) ) 
 Here is how much of TeX's memory you used:
- 4510 strings out of 493089
- 66625 string characters out of 6134842
- 138957 words of memory out of 5000000
- 7902 multiletter control sequences out of 15000+600000
+ 4532 strings out of 493089
+ 67526 string characters out of 6134842
+ 138889 words of memory out of 5000000
+ 7918 multiletter control sequences out of 15000+600000
  30136 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,14n,38p,961b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/urw/times/utmri8a.pfb>
-Output written on writeup2.pdf (3 pages, 342922 bytes).
+ 38i,14n,38p,961b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/t
+exlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/t
+imes/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri
+8a.pfb>
+Output written on writeup2.pdf (5 pages, 824464 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 70 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
