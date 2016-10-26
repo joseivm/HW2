@@ -33,12 +33,23 @@
 
 \subsection{Optimizing with Gradient Descent}
 
-\noindent To investigate how regularization affected the logistic regression we tried lambda values of 0 and 1. We decided not to penalize the bias term in the weight vector. As expected, we found that with a lambda value of 1 the weight vector decreased in every iteration of the algorithm. 
+\noindent To investigate how l2 regularization affected the logistic regression we tried lambda values of 0 and 1. We decided not to penalize the bias term in the weight vector. We found that with a lambda value of 1 the weight vector decreased in every iteration of the algorithm until it converged to its optimal value. We believe this is because for most iterations, the quickest way to decrease the objective function is to decrease the norm of the weight vector, because it is penalized by a quadratic factor. With a lambda value of 0, the opposite happened. The norm of the weight increased in every iteration until it converged to its optimal value. Unregularized logistic regressions attempt to make the weight vector as large as possible because that makes the sigmoid function steeper, which in turn increases the log likelihood of the data. Our obersvations agree with our intuition that regularization makes the weight vector smaller.
+
+
 
 
 \subsection{Section1}
 
+
+
+
+\subsection{L1 vs L2 Norm}
+
+Two common metrics used to penalize the size of the weight vector are the L1 and L2 norm. The 
+
+
 \subsection{Section2}
+
 
 
 % **************************************************************************************************

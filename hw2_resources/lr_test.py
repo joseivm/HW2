@@ -10,7 +10,7 @@ from scipy.optimize import fmin
 def sigmoid(x):
 	return 1.0/(1+np.exp(-x))
 
-def batch_gradient_descent(obj_func,gradient_func,init_guess,step_size,convergence_criterion):
+def batch_gradient_descent(obj_func,gradient_func,init_guess,step_size,convergence_criterion,max_iter):
 	I = []
 	S = []
 	size = init_guess.shape[0]
@@ -21,9 +21,9 @@ def batch_gradient_descent(obj_func,gradient_func,init_guess,step_size,convergen
 	new_cost = np.inf
 	iterations = 0
 	converged = False
-	while (not converged):
+	while (not converged and iterations<max_iter):
 
-		# if iterations%7==0: print iterations
+		if iterations%1000==0: print iterations, np.linalg.norm(w_new)
 
 		w_new = w_old - alpha*gradient_func(w_old)
 		new_cost = obj_func(w_new)
@@ -34,13 +34,13 @@ def batch_gradient_descent(obj_func,gradient_func,init_guess,step_size,convergen
 		old_cost = new_cost
 		w_old = w_new
 
-		if iterations%7==0: print w_new, np.linalg.norm(w_new)
+		# if iterations%7==0: print w_new, np.linalg.norm(w_new)
 		I.append(iterations)
 		S.append(np.linalg.norm(w_new))
 		iterations+=1
 		
 
-	# print 'minimum occurs at: ', w_new
+	print w_new
 	print "min val", new_cost
 	print iterations
 	return w_new, I,S # FIX THIS
@@ -53,7 +53,7 @@ def LR_obj_maker_batch1(X,Y,lambd):
 		ind_0 = (1-Y)/2
 		log_s = np.log(sigmoid(np.dot(theta,X.T)+theta_0))
 		reg_term = lambd*np.linalg.norm(theta)**2
-		return - np.sum(ind_1*log_s+ind_0*(1-log_s))+reg_term
+		return -1*np.sum(ind_1*log_s+ind_0*(1-log_s))+reg_term
 
 	return LR
 
@@ -73,11 +73,11 @@ def LR_grad_maker_batch1(X,Y,lambd):
 
 	return LR_grad
 
-def trainBatchGradientDescent(X,Y,step_size, convergence_criterion,lmbda):
+def trainBatchGradientDescent(X,Y,step_size, convergence_criterion,lmbda,max_iter):
 	guess = np.random.random(3)*10
 	LR_obj = LR_obj_maker_batch1(X,Y,lmbda)
 	LR_grad = LR_grad_maker_batch1(X,Y,lmbda)
-	w = batch_gradient_descent(LR_obj,LR_grad,guess,step_size,convergence_criterion)
+	w = batch_gradient_descent(LR_obj,LR_grad,guess,step_size,convergence_criterion,max_iter)
 	return w
 
 def trainLRL1norm(X,Y,C,s):
@@ -115,11 +115,12 @@ if __name__ == "__main__":
 
 	C = 10**8
 	# Cs = [.0001,.001,.01,.1,1,10,100,1000,10000]
-	step_size = 10**0
-	convergence_criterion = 10**-6
+	step_size = 10**-2
+	convergence_criterion = 10**-3
 
-	# w,I,S = trainBatchGradientDescent(X, Y, step_size, convergence_criterion,0)
-	# w1,I1,S1 = trainBatchGradientDescent(X, Y, step_size, convergence_criterion,1)
+
+	# w,I,S = trainBatchGradientDescent(X, Y, step_size, convergence_criterion,0,275000)
+	w1,I1,S1 = trainBatchGradientDescent(X, Y, step_size, convergence_criterion,1,500000)
 	# diff = len(I)-len(I1)
 	# conv_val = S1[len(I1)-1]
 	# rest = conv_val*np.ones(diff)
@@ -144,18 +145,18 @@ if __name__ == "__main__":
 	# 	CER = 1- model.score(X,Y)
 	# 	print 'lambda =', 1.0/C, 'CER:', CER, "w:", w, "norm:", np.linalg.norm(w)
 
-	w2, model = trainLRL2norm(X,Y,C,1)
-	print w2, np.linalg.norm(w2)
+	# w2, model = trainLRL2norm(X,Y,C,1)
+	# print w2, np.linalg.norm(w2)
 
 	# pl.plot(I,S,'b',label= "lambda = 0")
-	# pl.plot(I,S1,'r', label= "lambda = 1")
+	pl.plot(I1,S1,'r', label= "lambda = 1")
 
-	# pl.legend(loc='best')
+	pl.legend(loc='best')
 	# predictLR = constructPredictLR(w)
 
 	# plot training results
 	# plotDecisionBoundary(X, Y, predictLR, [0], title = 'LR Train')
-	# pl.show()
+	pl.show()
 
 
 	# print '======Validation======'
