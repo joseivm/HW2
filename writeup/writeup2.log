@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 OCT 2016 03:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 OCT 2016 03:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -293,24 +293,24 @@ Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
 (./writeup2.aux)
 \openout1 = `writeup2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 16.
-LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 16
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 17.
+LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 17
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omspzccm.fd
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -320,15 +320,15 @@ LaTeX Font Info:    ... okay on input line 16.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(36.135pt, 542.02501pt, 36.135pt)
-* v-part:(T,H,B)=(36.135pt, 722.7pt, 36.135pt)
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=542.02501pt
-* \textheight=722.7pt
-* \oddsidemargin=-36.135pt
-* \evensidemargin=-36.135pt
-* \topmargin=-73.135pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -409,7 +409,7 @@ Package caption Info: End \AtBeginDocument code.
 ! Undefined control sequence.
 \@title ->6.867 Machine Learning \subtitle 
                                            {Homework 2} 
-l.20 \maketitle
+l.21 \maketitle
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -418,87 +418,114 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 26.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 27.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 30.
-LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 59
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 31.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.45 ...on has an additional parameter, intercept_
+                                                  scaling, which is a factor...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 45
 .
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptmcm.fd
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 59
+LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 45
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omlptmcm.fd
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+psycm on input line 59
+LaTeX Font Info:    Try loading font information for OMX+psycm on input line 45
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omxpsycm.fd
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 59.
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 59.
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
- [1
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.46 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (650.59749pt too wide) in paragraph at lines 45--46
+\OT1/ptm/m/n/10 has an ad-di-tional pa-ram-e-ter, intercept$[]\OML/ptmcm/m/it/1
+0 caling; whichisafactorbywhichtheinterceptismultipliedbytooffsettheeffectsofth
+eregularization:Wesetthevalueoftheinterceptscalingtobeequaltothelambdavalue:Wet
+estedboththeL\OT1/ptmcm/m/n/10 1\OML/ptmcm/m/it/10 andL\OT1/ptmcm/m/n/10 2\OML/
+ptmcm/m/it/10 modelwithlambdavaluesrangingfrom\OT1/ptmcm/m/n/10 10[]5\OML/ptmcm
+/m/it/10 to\OT1/ptmcm/m/n/10 10[]\OML/ptmcm/m/it/10 :$ 
+ []
+
+[1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<Figures/P2/svm_data1_test_C1.png, id=13, 578.16pt x 433.62pt>
+[2] <Figures/P2/svm_data1_test_C1.png, id=16, 578.16pt x 433.62pt>
 File: Figures/P2/svm_data1_test_C1.png Graphic file (type png)
 
 <use Figures/P2/svm_data1_test_C1.png>
-Package pdftex.def Info: Figures/P2/svm_data1_test_C1.png used on input line 12
-9.
-(pdftex.def)             Requested size: 135.50624pt x 101.62943pt.
+Package pdftex.def Info: Figures/P2/svm_data1_test_C1.png used on input line 15
+1.
+(pdftex.def)             Requested size: 117.43875pt x 88.07884pt.
 
-<Figures/P2/svm_data2_test_C1.png, id=15, 578.16pt x 433.62pt>
+<Figures/P2/svm_data2_test_C1.png, id=18, 578.16pt x 433.62pt>
 File: Figures/P2/svm_data2_test_C1.png Graphic file (type png)
 
 <use Figures/P2/svm_data2_test_C1.png>
-Package pdftex.def Info: Figures/P2/svm_data2_test_C1.png used on input line 13
-5.
-(pdftex.def)             Requested size: 135.50624pt x 101.62943pt.
+Package pdftex.def Info: Figures/P2/svm_data2_test_C1.png used on input line 15
+7.
+(pdftex.def)             Requested size: 117.43875pt x 88.07884pt.
 
-<Figures/P2/svm_data3_test_C1.png, id=16, 578.16pt x 433.62pt>
+<Figures/P2/svm_data3_test_C1.png, id=19, 578.16pt x 433.62pt>
 File: Figures/P2/svm_data3_test_C1.png Graphic file (type png)
 
 <use Figures/P2/svm_data3_test_C1.png>
-Package pdftex.def Info: Figures/P2/svm_data3_test_C1.png used on input line 14
-1.
-(pdftex.def)             Requested size: 135.50624pt x 101.62943pt.
+Package pdftex.def Info: Figures/P2/svm_data3_test_C1.png used on input line 16
+3.
+(pdftex.def)             Requested size: 117.43875pt x 88.07884pt.
 
-<Figures/P2/svm_data4_test_C1.png, id=17, 578.16pt x 433.62pt>
+<Figures/P2/svm_data4_test_C1.png, id=20, 578.16pt x 433.62pt>
 File: Figures/P2/svm_data4_test_C1.png Graphic file (type png)
 
 <use Figures/P2/svm_data4_test_C1.png>
-Package pdftex.def Info: Figures/P2/svm_data4_test_C1.png used on input line 14
-7.
-(pdftex.def)             Requested size: 135.50624pt x 101.62943pt.
- [2 <./Figures/P2/svm_data1_test_C1.png> <./Figures/P2/svm_data2_test_C1.png> <
+Package pdftex.def Info: Figures/P2/svm_data4_test_C1.png used on input line 16
+9.
+(pdftex.def)             Requested size: 117.43875pt x 88.07884pt.
+ [3 <./Figures/P2/svm_data1_test_C1.png> <./Figures/P2/svm_data2_test_C1.png> <
 ./Figures/P2/svm_data3_test_C1.png> <./Figures/P2/svm_data4_test_C1.png>] (./wr
 iteup2.aux) ) 
 Here is how much of TeX's memory you used:
  4510 strings out of 493089
  66625 string characters out of 6134842
- 138967 words of memory out of 5000000
+ 138957 words of memory out of 5000000
  7902 multiletter control sequences out of 15000+600000
  30136 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,14n,38p,926b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,14n,38p,961b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</
 usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
 sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
@@ -507,10 +534,10 @@ local/texlive/2015/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texli
 ve/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/f
 onts/type1/urw/times/utmri8a.pfb>
-Output written on writeup2.pdf (2 pages, 335768 bytes).
+Output written on writeup2.pdf (3 pages, 342922 bytes).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 52 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
