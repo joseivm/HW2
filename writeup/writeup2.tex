@@ -1,7 +1,7 @@
-\documentclass[a4paper,twoside]{article}
+\documentclass[10pt,twoside]{article}
 
+\usepackage[margin=0.5in]{geometry}
 \usepackage{epsfig}
-\usepackage{subfigure}
 \usepackage{calc}
 \usepackage{amssymb}
 \usepackage{amstext}
@@ -10,13 +10,9 @@
 \usepackage{multicol}
 \usepackage{pslatex}
 \usepackage{apalike}
-\usepackage{SCITEPRESS}
-\usepackage[small]{caption}
-
-\subfigtopskip=0pt
-\subfigcapskip=0pt
-\subfigbottomskip=0pt
-
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
 \begin{document}
 
 \title{6.867 Machine Learning  \subtitle{Homework 2} }
@@ -33,32 +29,12 @@
 
 \subsection{Optimizing with Gradient Descent}
 
-\noindent To investigate how l2 regularization affected the logistic regression we tried lambda values of 0 and 1. We decided not to penalize the bias term in the weight vector. We found that with a lambda value of 1 the weight vector decreased in every iteration of the algorithm until it converged to its optimal value. We believe this is because for most iterations, the quickest way to decrease the objective function is to decrease the norm of the weight vector, because it is penalized by a quadratic factor. With a lambda value of 0, the opposite happened. The norm of the weight increased in every iteration until it converged to its optimal value. Unregularized logistic regressions attempt to make the weight vector as large as possible because that makes the sigmoid function steeper, which in turn increases the log likelihood of the data. Our obersvations agree with our intuition that regularization makes the weight vector smaller.
-
-
+\noindent To investigate how regularization affected the logistic regression we tried lambda values of 0 and 1. We decided not to penalize the bias term in the weight vector. As expected, we found that with a lambda value of 1 the weight vector decreased in every iteration of the algorithm. 
 
 
 \subsection{Section1}
 
-
-You should be able to concisely represent trends for those configurations. For example, you could have one plot showing the effect of the error rate for different regularizers and lambdas, a good example of changing the decision boundary, and general observations, and maybe a plot about the weights. Perform your experiments and see what makes the most sense.
-
-\subsection{L1 vs L2 Norm}
-
-Two common metrics used to penalize the size of the weight vector are the L1 and L2 norm. The norms are defined as follows: (L1 is sum of absolute values). We tested the effect of each of these norms and different lambda values on the Classification Error Rate, decision boundary, and the weights of the weight vector. We used scikit-learn's implementation of Logistic Regression, which also penalizes the bias term. To allow for unpenalized bias, the logistic regression has an additional parameter, intercept_scaling, which is a factor by which the intercept is multiplied by to offset the effects of the regularization. We set the value of the intercept scaling to be equal to the lambda value. We tested both the L1 and L2 model with lambda values ranging from 10^-5 to 10^5. 
-
-Effect on Classification Error Rate:
-In general, we found that the regularization seemed to have a larger effect on the CER when using the L1 norm then when using the L2 norm. The L2 norm logistic regression was able to maintain low CER's even with high lambda values. The L1 norm, on the other hand, often drove the weight vector to zero, which increased the CER. For most data sets, the L2 norm achieved a better CER than the L1 norm when set to the same lambda values. When both weight vectors were nonzero, their CER's usually only differed by a percentage point. The difference between the CER's grew dramatically whenever the L1 norm drove one of the weights in the weight vector to zero. The two models generally behaved that way except for the last data set, in which the data was linearly inseparable. There, the L1 and L2 norm achieved very similar CER scores for every lambda value we tested. 
-
-Effect on Decision Boundary 
-As mentioned in the previous section, the L1 norm tends to drive the weights of the weight vector to zero as lambda increases. As a result, there were several instances where the decision boundary was simply the x axis CHECK THIS. In general, we found that decreasing lambda changed the decision boundary in a direction where it could better separate the training data. This was true for all of the data sets where the data was linearly separable. For the data set in which the data was linearly inseparable, the decision boundary never changed, regardless of the lambda value. 
-
-Effect on Weights
-Higher lambda values decreased the weights of the weight vector in both models. Higher lambda values affected the L1 model a lot more, as it was more likely to have zero valued weights. The L2 model was more likely to have very small, but still nonzero weights. 
-
-
 \subsection{Section2}
-
 
 
 % **************************************************************************************************
@@ -147,31 +123,33 @@ This solver returns $\overrightarrow{x}$ which is our $\overrightarrow{\alpha}$ 
 Do the stupid example!
 
 \subsection{2D Dataset Results}
-
 \begin{figure}
         \begin{subfigure}[b]{0.25\textwidth}
+                \centering
                 \includegraphics[width=\linewidth]{Figures/P2/svm_data1_test_C1.png}
-                \caption{Fuck}
+                \caption{A gull}
                 \label{fig:gull}
         \end{subfigure}%
         \begin{subfigure}[b]{0.25\textwidth}
-                \includegraphics[width=\linewidth]{example-image-a}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P2/svm_data2_test_C1.png}
                 \caption{A gull2}
                 \label{fig:gull2}
         \end{subfigure}%
         \begin{subfigure}[b]{0.25\textwidth}
-                \includegraphics[width=\linewidth]{example-image-a}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P2/svm_data3_test_C1.png}
                 \caption{A tiger}
                 \label{fig:tiger}
         \end{subfigure}%
         \begin{subfigure}[b]{0.25\textwidth}
-                \includegraphics[width=\linewidth]{example-image-a}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P2/svm_data4_test_C1.png}
                 \caption{A mouse}
                 \label{fig:mouse}
         \end{subfigure}
         \caption{Pictures of animals}\label{fig:animals}
 \end{figure}
-
 
 \subsection{2D Dataset Results with Kernel Functions}
 

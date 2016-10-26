@@ -6,8 +6,10 @@ import numpy as np
 # import your SVM training code
 
 def kernel(x1,x2):
-    return np.dot(x1,x2)
+    # return np.dot(x1,x2)
     # return 1+np.dot(x1.T, x2)+np.dot(x1.T, x2)**2
+    g = 1
+    return np.exp(-g * np.linalg.norm(x1-x2)**2)
 
 def trainSVM(X,Y,C):
     # Carry out training, primal and/or dual
@@ -73,9 +75,29 @@ def constructPredictSVM(X, Y, alpha):
         return s + theta_0
     return predictSVM
 
+
+
+def evaluatePredict(X, Y, predict):
+    n = len(X)
+    misclass = 0
+    misclassifications = []
+    for i in xrange(n):
+        x = X[i]
+        y = Y[i]
+        y_pred = np.sign(predict(x))
+        if y != y_pred:
+            misclass += 1
+            misclassifications.append(i)
+
+    misclassrate = misclass*1.0/n
+    print "# of misclass: ", misclass
+    print "Misclass rate: ", misclassrate
+    print "Misclassifications: ", misclassifications
+    return misclassrate, misclassifications
+
 if __name__ == "__main__":
     # parameters
-    name = '1'
+    name = '4'
     C = 10**0
     print '======Training======'
     # load data from csv files
@@ -91,6 +113,8 @@ if __name__ == "__main__":
     # plot training results
     plotDecisionBoundary(X, Y, predictSVM, [-1, 0, 1], title = 'SVM Train')
 
+    evaluatePredict(X,Y, predictSVM)
+
 
     print '======Validation======'
     # load data from csv files
@@ -99,4 +123,19 @@ if __name__ == "__main__":
     Y = validate[:, 2:3]
     # plot validation results
     plotDecisionBoundary(X, Y, predictSVM, [-1, 0, 1], title = 'SVM Validate')
+
+    evaluatePredict(X,Y, predictSVM)
+
+    print '======Testing======'
+    # load data from csv files
+    test = loadtxt('data/data'+name+'_test.csv')
+    X = test[:, 0:2]
+    Y = test[:, 2:3]
+    # plot validation results
+    plotDecisionBoundary(X, Y, predictSVM, [-1, 0, 1], title = 'SVM Test')
+
+    evaluatePredict(X,Y, predictSVM)
+
+
+
     pl.show()
