@@ -4,7 +4,7 @@ import numpy as np
 # import your LR training code
 
 # load data from csv files
-train = loadtxt('data/data4_train.csv')
+train = loadtxt('data/data1_train.csv')
 X = train[:,0:2]
 Y = train[:,2:3]
 
@@ -73,12 +73,12 @@ for i in [-2,-1,0,1,2]:
 
 
 	alphas = train_gaussianSVM(X, Y, K, lmbda, epochs);
-	# print np.count_nonzero(alphas)
+	print np.count_nonzero(alphas)
 
 
 	# Define the predict_gaussianSVM(x) function, which uses trained parameters, alpha
 	### TODO:  define predict_gaussianSVM(x) ###
 
 	# plot training results
-	plotDecisionBoundary(X, Y, predict_gaussianSVM, [-1,0,1], title = 'Gaussian Kernel SVM')
-	pl.show()
+	# plotDecisionBoundary(X, Y, predict_gaussianSVM, [-1,0,1], title = 'Gaussian Kernel SVM')
+	# pl.show()
