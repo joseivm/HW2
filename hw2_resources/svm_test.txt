@@ -1,0 +1,33 @@
+Linear
+
+data1
+C = 1
+Train Error rate = 0
+Val Error rate = 0
+Test Error rate = 0
+
+data2
+C = 1
+Train Error rate = 0.1775
+Val Error rate = 0.18
+Test Error rate = 0.195
+
+data3
+C = 1
+Train Error rate = 0.02
+Val Error rate = 0.03
+Test Error rate = 0.045
+
+data4
+C = 1
+Train Error rate = 0.3
+Val Error rate = 0.305
+Test Error rate = 0.3
+
+RBF
+C=1
+g=1
+data4
+Train Error rate = 0.0325
+Val Error rate = 0.05
+Test Error rate = 0.0475

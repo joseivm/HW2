@@ -1,7 +1,7 @@
-\documentclass[a4paper,twoside]{article}
+\documentclass[10pt,twoside]{article}
 
+\usepackage[margin=0.5in]{geometry}
 \usepackage{epsfig}
-\usepackage{subfigure}
 \usepackage{calc}
 \usepackage{amssymb}
 \usepackage{amstext}
@@ -10,13 +10,9 @@
 \usepackage{multicol}
 \usepackage{pslatex}
 \usepackage{apalike}
-\usepackage{SCITEPRESS}
-\usepackage[small]{caption}
-
-\subfigtopskip=0pt
-\subfigcapskip=0pt
-\subfigbottomskip=0pt
-
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
 \begin{document}
 
 \title{6.867 Machine Learning  \subtitle{Homework 2} }
@@ -127,31 +123,33 @@ This solver returns $\overrightarrow{x}$ which is our $\overrightarrow{\alpha}$ 
 Do the stupid example!
 
 \subsection{2D Dataset Results}
-
 \begin{figure}
         \begin{subfigure}[b]{0.25\textwidth}
+                \centering
                 \includegraphics[width=\linewidth]{Figures/P2/svm_data1_test_C1.png}
-                \caption{Fuck}
+                \caption{A gull}
                 \label{fig:gull}
         \end{subfigure}%
         \begin{subfigure}[b]{0.25\textwidth}
-                \includegraphics[width=\linewidth]{example-image-a}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P2/svm_data2_test_C1.png}
                 \caption{A gull2}
                 \label{fig:gull2}
         \end{subfigure}%
         \begin{subfigure}[b]{0.25\textwidth}
-                \includegraphics[width=\linewidth]{example-image-a}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P2/svm_data3_test_C1.png}
                 \caption{A tiger}
                 \label{fig:tiger}
         \end{subfigure}%
         \begin{subfigure}[b]{0.25\textwidth}
-                \includegraphics[width=\linewidth]{example-image-a}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P2/svm_data4_test_C1.png}
                 \caption{A mouse}
                 \label{fig:mouse}
         \end{subfigure}
         \caption{Pictures of animals}\label{fig:animals}
 \end{figure}
-
 
 \subsection{2D Dataset Results with Kernel Functions}
 
