@@ -64,16 +64,18 @@ def constructPredictPegasosLinearSVM(w):
 
 if __name__ == "__main__":
 	# load data from csv files
-	train = loadtxt('data/data3_train.csv')
+	name = '1'
+	train = loadtxt('data/data'+name+'_train.csv')
 	X = train[:,0:2]
 	Y = train[:,2:3]
 
-	# lambd = [2**0, 2**-1]
-	lambd = 2**-10
-	max_iter = 1000
-	w = pegasos_alg(X,Y,lambd,max_iter)
-	predict = constructPredictPegasosLinearSVM(w)
+	for i in range(-10,3):
+		lambd = 2**-i
+		print 'lambda = 2^',i
+		max_iter = 500
+		w = pegasos_alg(X,Y,lambd,max_iter)
+		predict = constructPredictPegasosLinearSVM(w)
 
-	plotDecisionBoundary(X, Y, predict, [-1,0,1], title = 'Linear SVM')
-	pl.show()
+		plotDecisionBoundary(X, Y, predict, [-1,0,1], title = 'Linear SVM')
+		pl.show()
 

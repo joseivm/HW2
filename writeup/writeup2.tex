@@ -26,33 +26,103 @@
 
 \section{\uppercase{Logistic Regression}}
 
-\noindent Logistic Regression is a discriminative model used for classification. Given an input x, it finds the posterior of x belonging to one of the classes and then uses that probability to classify x. In the simplest case, it takes the dot product of x and w and uses that as an input to the sigmoid function, which outputs a number between 0 and 1. An advantage of logistic regressions is that they have few parameters, which allows them to be trained relatively quickly. One of the problems with logistic regressions is that they are very prone to overfitting to the training data. One way to prevent the overfitting is to add a regularization term, lambda, which penalizes the size of the weight vector. The size of the weight vector can be penalized using the L1 norm of the L2 norm. Here, we explore how different lambda values and the different norms affect several aspects of the logistic regression.
+\noindent Logistic Regression is a discriminative model used for classification. Given an input $x$, it finds the posterior of $x$ belonging to one of the classes and then uses that probability to classify $x$. In the simplest case, it takes a linear combination of the input $x$ and uses that as an input to the sigmoid function, which outputs a number between 0 and 1. One of the problems with logistic regressions is that they are very prone to overfitting to the training data. One way to prevent the overfitting is to add a regularization term, $\lambda$, which penalizes the size of the weight vector. The size of the weight vector can be penalized using the $L_1$ norm and the $L_2$ norm. Here, we explore how different values of $\lambda$  and the different norms affect several aspects of the logistic regression.
+
+\begin{equation}
+\sum_i \log(1+exp(-y^{(i)}(wx^{(i)}+w_0))) + \lambda \left \| w \right \|_2^2
+\end{equation}
+
+\begin{equation}
+\sum_{i=1}^n (\sigma (W^Tx^{(i)})-y^{(i)})x^{(i)} + 2\lambda 
+\end{equation}
+
+
+\begin{equation}
+\frac{1}{1+e^{-x}}
+\end{equation}
+
 
 \subsection{Optimizing with Gradient Descent}
 
-\noindent To investigate how l2 regularization affected the logistic regression we tried lambda values of 0 and 1. We decided not to penalize the bias term in the weight vector. We found that with a lambda value of 1 the weight vector decreased in every iteration of the algorithm until it converged to its optimal value. We believe this is because for most iterations, the quickest way to decrease the objective function is to decrease the norm of the weight vector, because it is penalized by a quadratic factor. With a lambda value of 0, the opposite happened. The norm of the weight increased in every iteration until it converged to its optimal value. Unregularized logistic regressions attempt to make the weight vector as large as possible because that makes the sigmoid function steeper, which in turn increases the log likelihood of the data. Our obersvations agree with our intuition that regularization makes the weight vector smaller.
+\noindent To investigate how $L_2$ regularization affected the logistic regression we tried $\lambda = 0$ and $\lambda = 1$. We decided not to penalize the bias term in the weight vector. We found that with $\lambda = 1$ the weight vector decreased in every iteration of the algorithm until it converged to its optimal value. We believe this is because for most iterations, the quickest way to decrease the objective function is to decrease the norm of the weight vector, because it is penalized by a quadratic factor. With $\lambda = 0$, the opposite happened. The norm of the weight increased in every iteration until it converged to its optimal value. Unregularized logistic regressions attempt to make the weight vector as large as possible because that makes the sigmoid function steeper, which in turn increases the log likelihood of the data. Our obersvations agree with our intuition that regularization makes the weight vector smaller.
 
+\begin{figure}[h]
+        \begin{subfigure}[b]{0.5\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P1/1_1_L0.png}
+                \caption{Graph of Norm of weight vector with lmbda = 0}
+        \end{subfigure}%
+        \begin{subfigure}[b]{0.5\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P1/1_1_L1.png}
+                \caption{Graph of Norm of weight vector with lmbda = 0}
+        \end{subfigure}
+        \caption{Pictures of animals}
+\end{figure}
 
-
-
-\subsection{Section1}
+\subsection{Section1??}
 
 
 You should be able to concisely represent trends for those configurations. For example, you could have one plot showing the effect of the error rate for different regularizers and lambdas, a good example of changing the decision boundary, and general observations, and maybe a plot about the weights. Perform your experiments and see what makes the most sense.
 
 \subsection{L1 vs L2 Norm}
 
-Two common metrics used to penalize the size of the weight vector are the L1 and L2 norm. The norms are defined as follows: (L1 is sum of absolute values). We tested the effect of each of these norms and different lambda values on the Classification Error Rate, decision boundary, and the weights of the weight vector. We used scikit-learn's implementation of Logistic Regression, which also penalizes the bias term. To allow for unpenalized bias, the logistic regression has an additional parameter, intercept_scaling, which is a factor by which the intercept is multiplied by to offset the effects of the regularization. We set the value of the intercept scaling to be equal to the lambda value. We tested both the L1 and L2 model with lambda values ranging from 10^-5 to 10^5. 
+Two common metrics used to penalize the size of the weight vector are the L1 and L2 norm. The norms are defined as follows: (L1 is sum of absolute values). We tested the effect of each of these norms and different lambda values on the Classification Error Rate, decision boundary, and the weights of the weight vector. We used scikit-learn's implementation of Logistic Regression, which also penalizes the bias term. To allow for unpenalized bias, the logistic regression has an additional parameter, intercept_scaling, which is a factor by which the intercept is multiplied by to offset the effects of the regularization. We set the value of the intercept scaling to be equal to the lambda value. We tested both the L1 and L2 model with lambda values ranging from $10^{-5}$ to $10^5$. 
 
 Effect on Classification Error Rate:
 In general, we found that the regularization seemed to have a larger effect on the CER when using the L1 norm then when using the L2 norm. The L2 norm logistic regression was able to maintain low CER's even with high lambda values. The L1 norm, on the other hand, often drove the weight vector to zero, which increased the CER. For most data sets, the L2 norm achieved a better CER than the L1 norm when set to the same lambda values. When both weight vectors were nonzero, their CER's usually only differed by a percentage point. The difference between the CER's grew dramatically whenever the L1 norm drove one of the weights in the weight vector to zero. The two models generally behaved that way except for the last data set, in which the data was linearly inseparable. There, the L1 and L2 norm achieved very similar CER scores for every lambda value we tested. 
 
+\begin{figure}[h]
+        \begin{subfigure}[b]{0.5\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P1/B_CERL1.png}
+                \caption{Classification Error Rate of L1 norm as a function of Lambda}
+        \end{subfigure}%
+        \begin{subfigure}[b]{0.5\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P1/B_CERL2.png}
+                \caption{Classification Error Rate of L2 norm as a function of Lambda}
+        \end{subfigure}
+        \caption{Pictures of animals}
+\end{figure}
+
 Effect on Decision Boundary 
 As mentioned in the previous section, the L1 norm tends to drive the weights of the weight vector to zero as lambda increases. As a result, there were several instances where the decision boundary was simply the x axis CHECK THIS. In general, we found that decreasing lambda changed the decision boundary in a direction where it could better separate the training data. This was true for all of the data sets where the data was linearly separable. For the data set in which the data was linearly inseparable, the decision boundary never changed, regardless of the lambda value. 
+
+\begin{figure}[h]
+        \begin{subfigure}[b]{0.25\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P1/LR1__1.png}
+                \caption{A gull}
+                \label{fig:gull}
+        \end{subfigure}%
+        \begin{subfigure}[b]{0.25\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P1/LR1_1.png}
+                \caption{A gull2}
+                \label{fig:gull2}
+        \end{subfigure}%
+        \begin{subfigure}[b]{0.25\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P1/LR1_10.png}
+                \caption{A tiger}
+                \label{fig:tiger}
+        \end{subfigure}%
+        \begin{subfigure}[b]{0.25\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{Figures/P1/LR1_1000.png}
+                \caption{A mouse}
+                \label{fig:mouse}
+        \end{subfigure}
+        \caption{Pictures of animals}\label{fig:animals}
+\end{figure}
+
 
 Effect on Weights
 Higher lambda values decreased the weights of the weight vector in both models. Higher lambda values affected the L1 model a lot more, as it was more likely to have zero valued weights. The L2 model was more likely to have very small, but still nonzero weights. 
 
+\subsection{Optimal Parameters}
+We evaluated the performance of both norms on different data sets using the same lambda values as before. We found that when using L1 regularization, a lambda value of 0.1 achieved the best performance on both the validation and the test sets. With L2 regularization the optimal value for lambda was 1. Both of these values can be modified by a factor of 10 without significantly hurting the accuracy. With these values, the two models achieved nearly identical results on all data sets, the difference in performance was never more than half a percentage point.
 
 \subsection{Section2}
 
@@ -191,6 +261,7 @@ We used our implementation of SVM to classify 2D points and generated plots of t
 
 \subsection{2D Dataset Results with Kernel Functions}
 
+<<<<<<< HEAD
 Support Vector Machines can still be used to classify not linearly separable data. To do this, we need to either map the data points to higher dimensions or use a nonlinear kernel. To obtain a better classification for dataset 4, we used a Gaussian radial basis function (RBF) kernel with $\gamma = 1$. The result is shown in figure b of figure ? and it achieved a test error rate $4.75\%$.
 
 
@@ -239,7 +310,16 @@ When optimizing and choosing a $C$, maximizing the geometric margin should not b
         \caption{Decision boundary for SVM with Gaussian RBF kernel. In figure a, the margins are so big they almost do not show up in the graph. By figure c, they have shrunk considerably closer to the decision boundary.}
 \end{figure}
 
+=======
+small lambdas penalize the w less, which let w get bigger
+>>>>>>> f5a6e012cde3361dfe4b260a617d8c21b0f77a3b
 
+as Lambda --- > inf
+   w -------> 0
+   margin = 1/w -------> inf
+
+   Lambda -----> 0
+   Empirical evidence: as lambda increases, the margin decreases
 
 % **************************************************************************************************
  % Problem 3
@@ -247,10 +327,14 @@ When optimizing and choosing a $C$, maximizing the geometric margin should not b
 
 \section{\uppercase{Support Vector Machine with Pegasos}}
 
-\subsection{Section1?}
+Even though SVMs have some nice properties, it can be very inefficient to solve large SVMs. The Pegasos Algorithm can be used to solve a formulation of Soft-SVM that is equivalent to C-SVM with C = 1/(lmbda*n). One of the biggest advantages the Pegasos algorithm offers is very fast training times. 
+
+\subsection{Linear SVM}
+We implemented the Pegasos algorithm to solve the objective function shown above and tested several values of lambda between 2^1 and 2^-10 and found that the margin shrank as lambda was increased. 
 
 
-\subsection{Section2?}
+\subsection{Kernelized Pegasos}
+The Pegasos algorithm can be easily modified to support Kernels. We implemented this modification and evaluated the performance of SVMs trained using Pegasos. 
 
 
 % **************************************************************************************************

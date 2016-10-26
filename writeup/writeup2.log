@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 OCT 2016 05:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 OCT 2016 05:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -290,7 +290,11 @@ Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
 \c@subfigure=\count116
 \c@subtable=\count117
 )
-(./writeup2.aux)
+(./writeup2.aux
+
+LaTeX Warning: Label `fig:animals' multiply defined.
+
+)
 \openout1 = `writeup2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
@@ -302,8 +306,7 @@ LaTeX Font Info:    ... okay on input line 17.
 LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 17.
 LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 17
 .
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omspzccm.fd
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omspzccm.fd
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
 LaTeX Font Info:    ... okay on input line 17.
@@ -419,180 +422,269 @@ and I'll forget about whatever was undefined.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 27.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 31.
-! Missing $ inserted.
-<inserted text> 
-                $
-l.45 ...on has an additional parameter, intercept_
-                                                  scaling, which is a factor...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 45
+LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 29
 .
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptmcm.fd
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 45
+LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 29
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omlptmcm.fd
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+psycm on input line 45
+LaTeX Font Info:    Try loading font information for OMX+psycm on input line 29
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omxpsycm.fd
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 45.
+LaTeX Font Info:    Try loading font information for U+msa on input line 29.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 45.
+LaTeX Font Info:    Try loading font information for U+msb on input line 29.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 29.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
+
+<Figures/P1/1_1_L0.png, id=1, 578.16pt x 433.62pt>
+File: Figures/P1/1_1_L0.png Graphic file (type png)
+ <use Figures/P1/1_1_L0.png>
+Package pdftex.def Info: Figures/P1/1_1_L0.png used on input line 52.
+(pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
+
+<Figures/P1/1_1_L1.png, id=3, 578.16pt x 433.62pt>
+File: Figures/P1/1_1_L1.png Graphic file (type png)
+ <use Figures/P1/1_1_L1.png>
+Package pdftex.def Info: Figures/P1/1_1_L1.png used on input line 57.
+(pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
+
+[1
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Figur
+es/P1/1_1_L0.png> <./Figures/P1/1_1_L1.png>]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.70 ...on has an additional parameter, intercept_
+                                                  scaling, which is a factor...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.46 
-     
+l.70 ...model with lambda values ranging from $10^
+                                                  {-5}$ to $10^5$.
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (650.59749pt too wide) in paragraph at lines 45--46
+Overfull \hbox (624.11777pt too wide) in paragraph at lines 70--71
 \OT1/ptm/m/n/10 has an ad-di-tional pa-ram-e-ter, intercept$[]\OML/ptmcm/m/it/1
 0 caling; whichisafactorbywhichtheinterceptismultipliedbytooffsettheeffectsofth
 eregularization:Wesetthevalueoftheinterceptscalingtobeequaltothelambdavalue:Wet
 estedboththeL\OT1/ptmcm/m/n/10 1\OML/ptmcm/m/it/10 andL\OT1/ptmcm/m/n/10 2\OML/
-ptmcm/m/it/10 modelwithlambdavaluesrangingfrom\OT1/ptmcm/m/n/10 10[]5\OML/ptmcm
-/m/it/10 to\OT1/ptmcm/m/n/10 10[]\OML/ptmcm/m/it/10 :$ 
+ptmcm/m/it/10 modelwithlambdavaluesrangingfrom$\OT1/ptm/m/n/10 10$[]$
  []
 
-[1
+<Figures/P1/B_CERL1.png, id=17, 578.16pt x 433.62pt>
+File: Figures/P1/B_CERL1.png Graphic file (type png)
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] <Figures/P2/dumb.png, id=16, 578.16pt x 433.62pt>
+<use Figures/P1/B_CERL1.png>
+Package pdftex.def Info: Figures/P1/B_CERL1.png used on input line 78.
+(pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
+
+<Figures/P1/B_CERL2.png, id=18, 578.16pt x 433.62pt>
+File: Figures/P1/B_CERL2.png Graphic file (type png)
+
+<use Figures/P1/B_CERL2.png>
+Package pdftex.def Info: Figures/P1/B_CERL2.png used on input line 83.
+(pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
+
+<Figures/P1/LR1__1.png, id=19, 578.16pt x 433.62pt>
+File: Figures/P1/LR1__1.png Graphic file (type png)
+
+<use Figures/P1/LR1__1.png>
+Package pdftex.def Info: Figures/P1/LR1__1.png used on input line 95.
+(pdftex.def)             Requested size: 117.43875pt x 88.07884pt.
+ <Figures/P1/LR1_1.png, id=20, 578.16pt x 433.62pt>
+File: Figures/P1/LR1_1.png Graphic file (type png)
+
+<use Figures/P1/LR1_1.png>
+Package pdftex.def Info: Figures/P1/LR1_1.png used on input line 101.
+(pdftex.def)             Requested size: 117.43875pt x 88.07884pt.
+ <Figures/P1/LR1_10.png, id=21, 578.16pt x 433.62pt>
+File: Figures/P1/LR1_10.png Graphic file (type png)
+
+<use Figures/P1/LR1_10.png>
+Package pdftex.def Info: Figures/P1/LR1_10.png used on input line 107.
+(pdftex.def)             Requested size: 117.43875pt x 88.07884pt.
+
+<Figures/P1/LR1_1000.png, id=22, 578.16pt x 433.62pt>
+File: Figures/P1/LR1_1000.png Graphic file (type png)
+
+<use Figures/P1/LR1_1000.png>
+Package pdftex.def Info: Figures/P1/LR1_1000.png used on input line 113.
+(pdftex.def)             Requested size: 117.43875pt x 88.07884pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 1210) has occurred while \output is active []
+
+ [2 <./Figures/P1/B_CERL1.png> <./Figures/P1/B_CERL2.png>] [3 <./Figures/P1/LR1
+__1.png> <./Figures/P1/LR1_1.png> <./Figures/P1/LR1_10.png> <./Figures/P1/LR1_1
+000.png>]
+<Figures/P2/dumb.png, id=36, 578.16pt x 433.62pt>
 File: Figures/P2/dumb.png Graphic file (type png)
-
-<use Figures/P2/dumb.png>
-Package pdftex.def Info: Figures/P2/dumb.png used on input line 142.
+ <use Figures/P2/dumb.png>
+Package pdftex.def Info: Figures/P2/dumb.png used on input line 212.
 (pdftex.def)             Requested size: 170.71652pt x 128.03589pt.
 
-<Figures/P2/svm_data1_test_C1.png, id=18, 578.16pt x 433.62pt>
+<Figures/P2/svm_data1_test_C1.png, id=37, 578.16pt x 433.62pt>
 File: Figures/P2/svm_data1_test_C1.png Graphic file (type png)
 
 <use Figures/P2/svm_data1_test_C1.png>
-Package pdftex.def Info: Figures/P2/svm_data1_test_C1.png used on input line 15
+Package pdftex.def Info: Figures/P2/svm_data1_test_C1.png used on input line 22
 5.
 (pdftex.def)             Requested size: 117.43875pt x 88.07884pt.
 
-<Figures/P2/svm_data2_test_C1.png, id=19, 578.16pt x 433.62pt>
+<Figures/P2/svm_data2_test_C1.png, id=38, 578.16pt x 433.62pt>
 File: Figures/P2/svm_data2_test_C1.png Graphic file (type png)
 
 <use Figures/P2/svm_data2_test_C1.png>
-Package pdftex.def Info: Figures/P2/svm_data2_test_C1.png used on input line 16
+Package pdftex.def Info: Figures/P2/svm_data2_test_C1.png used on input line 23
 0.
 (pdftex.def)             Requested size: 117.43875pt x 88.07884pt.
 
-<Figures/P2/svm_data3_test_C1.png, id=20, 578.16pt x 433.62pt>
+<Figures/P2/svm_data3_test_C1.png, id=39, 578.16pt x 433.62pt>
 File: Figures/P2/svm_data3_test_C1.png Graphic file (type png)
 
 <use Figures/P2/svm_data3_test_C1.png>
-Package pdftex.def Info: Figures/P2/svm_data3_test_C1.png used on input line 16
+Package pdftex.def Info: Figures/P2/svm_data3_test_C1.png used on input line 23
 5.
 (pdftex.def)             Requested size: 117.43875pt x 88.07884pt.
 
-<Figures/P2/svm_data4_test_C1.png, id=21, 578.16pt x 433.62pt>
+<Figures/P2/svm_data4_test_C1.png, id=40, 578.16pt x 433.62pt>
 File: Figures/P2/svm_data4_test_C1.png Graphic file (type png)
 
 <use Figures/P2/svm_data4_test_C1.png>
-Package pdftex.def Info: Figures/P2/svm_data4_test_C1.png used on input line 17
+Package pdftex.def Info: Figures/P2/svm_data4_test_C1.png used on input line 24
 0.
 (pdftex.def)             Requested size: 117.43875pt x 88.07884pt.
- [3 <./Figures/P2/dumb.png> <./Figures/P2/svm_data1_test_C1.png> <./Figures/P2/
-svm_data2_test_C1.png> <./Figures/P2/svm_data3_test_C1.png> <./Figures/P2/svm_d
-ata4_test_C1.png>]
-<Figures/P2/svm_data1_test_C-2.png, id=30, 578.16pt x 433.62pt>
+ [4 <./Figures/P2/dumb.png>]
+<Figures/P2/svm_data1_test_C-2.png, id=45, 578.16pt x 433.62pt>
 File: Figures/P2/svm_data1_test_C-2.png Graphic file (type png)
 
 <use Figures/P2/svm_data1_test_C-2.png>
 Package pdftex.def Info: Figures/P2/svm_data1_test_C-2.png used on input line 2
-07.
+78.
 (pdftex.def)             Requested size: 155.02pt x 116.26514pt.
 File: Figures/P2/svm_data1_test_C1.png Graphic file (type png)
  <use Figures/P2/svm_data1_test_C1.png>
-Package pdftex.def Info: Figures/P2/svm_data1_test_C1.png used on input line 21
-2.
+Package pdftex.def Info: Figures/P2/svm_data1_test_C1.png used on input line 28
+3.
 (pdftex.def)             Requested size: 155.02pt x 116.26514pt.
 
-<Figures/P2/svm_data1_test_C100.png, id=31, 578.16pt x 433.62pt>
+<Figures/P2/svm_data1_test_C100.png, id=46, 578.16pt x 433.62pt>
 File: Figures/P2/svm_data1_test_C100.png Graphic file (type png)
 
 <use Figures/P2/svm_data1_test_C100.png>
 Package pdftex.def Info: Figures/P2/svm_data1_test_C100.png used on input line 
-217.
+288.
 (pdftex.def)             Requested size: 155.02pt x 116.26514pt.
 
-<Figures/P2/RBF_data4_test_g1C-2.png, id=32, 578.16pt x 433.62pt>
+<Figures/P2/RBF_data4_test_g1C-2.png, id=47, 578.16pt x 433.62pt>
 File: Figures/P2/RBF_data4_test_g1C-2.png Graphic file (type png)
 
 <use Figures/P2/RBF_data4_test_g1C-2.png>
 Package pdftex.def Info: Figures/P2/RBF_data4_test_g1C-2.png used on input line
- 226.
+ 297.
 (pdftex.def)             Requested size: 155.02pt x 116.26514pt.
 
-<Figures/P2/RBF_data4_test_g1C1.png, id=33, 578.16pt x 433.62pt>
+<Figures/P2/RBF_data4_test_g1C1.png, id=48, 578.16pt x 433.62pt>
 File: Figures/P2/RBF_data4_test_g1C1.png Graphic file (type png)
 
 <use Figures/P2/RBF_data4_test_g1C1.png>
 Package pdftex.def Info: Figures/P2/RBF_data4_test_g1C1.png used on input line 
-231.
+302.
 (pdftex.def)             Requested size: 155.02pt x 116.26514pt.
 
-<Figures/P2/RBF_data4_test_g1C100.png, id=34, 578.16pt x 433.62pt>
+<Figures/P2/RBF_data4_test_g1C100.png, id=49, 578.16pt x 433.62pt>
 File: Figures/P2/RBF_data4_test_g1C100.png Graphic file (type png)
 
 <use Figures/P2/RBF_data4_test_g1C100.png>
 Package pdftex.def Info: Figures/P2/RBF_data4_test_g1C100.png used on input lin
-e 236.
+e 307.
 (pdftex.def)             Requested size: 155.02pt x 116.26514pt.
- [4 <./Figures/P2/svm_data1_test_C-2.png> <./Figures/P2/svm_data1_test_C100.png
-> <./Figures/P2/RBF_data4_test_g1C-2.png> <./Figures/P2/RBF_data4_test_g1C1.png
-> <./Figures/P2/RBF_data4_test_g1C100.png>] [5] (./writeup2.aux) ) 
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (35.8207pt too wide) in paragraph at lines 313--316
+[]\OT1/ptm/m/n/10 ======= small lamb-das pe-nal-ize the w less, which let w get
+ big-ger >>>>>>> f5a6e012cde3361dfe4b260a617d8c21b0f77a3b 
+ []
+
+[5 <./Figures/P2/svm_data1_test_C1.png> <./Figures/P2/svm_data2_test_C1.png> <.
+/Figures/P2/svm_data3_test_C1.png> <./Figures/P2/svm_data4_test_C1.png> <./Figu
+res/P2/svm_data1_test_C-2.png> <./Figures/P2/svm_data1_test_C100.png>]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.333 ...ested several values of lambda between 2^
+                                                  1 and 2^-10 and found that...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.334 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[6 <./Figures/P2/RBF_data4_test_g1C-2.png> <./Figures/P2/RBF_data4_test_g1C1.pn
+g> <./Figures/P2/RBF_data4_test_g1C100.png>] (./writeup2.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4532 strings out of 493089
- 67526 string characters out of 6134842
- 138889 words of memory out of 5000000
- 7918 multiletter control sequences out of 15000+600000
+ 4581 strings out of 493089
+ 68558 string characters out of 6134842
+ 139996 words of memory out of 5000000
+ 7958 multiletter control sequences out of 15000+600000
  30136 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,14n,38p,961b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/t
-exlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
-ype1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/t
-imes/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri
-8a.pfb>
-Output written on writeup2.pdf (5 pages, 824464 bytes).
+ 38i,14n,38p,959b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fo
+nts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
+urw/times/utmri8a.pfb>
+Output written on writeup2.pdf (6 pages, 1146408 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 35 compressed objects within 1 object stream
+ 89 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 
