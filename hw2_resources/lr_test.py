@@ -84,13 +84,13 @@ def trainLRL1norm(X,Y,C,s):
 	model = LogisticRegression(penalty='l1',C=C,intercept_scaling=s)
 	model.fit(X,Y)
 	w = np.concatenate((model.intercept_,model.coef_[0]))
-	return w, model # FIX THIS
+	return w
  
 def trainLRL2norm(X,Y,C,s):
 	model = LogisticRegression(C=C,intercept_scaling=s)
 	model.fit(X,Y)
 	w = np.concatenate((model.intercept_,model.coef_[0]))
-	return w, model # FIX THIS
+	return w
 
 def constructPredictLR(w):
 	def predictLR(x):

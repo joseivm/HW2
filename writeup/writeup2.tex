@@ -333,9 +333,29 @@ The Pegasos algorithm can be easily modified to support Kernels. We implemented 
 \section{\uppercase{Handwritten Digit Recognition with MNIST}}
 Using the three classification algorithms we developed in this paper, we attempted to classify hand-written digits from the MNIST dataset and compared their performances. Since all the algorithms performed only two-way classification, our goal was to distinguish a certain set of digits for another set of digits. Images of digits from one set were labeled $1$ and while digits from the other set were labeled $-1$.
 
-The training sets used consisted of 200 images of each digit to be classified. Validation and test sets contained 150 for each digit. Each 28 X 28 image was treated as an vector of length 784. We tried the following classfication tasks,  1 vs 7, 3 vs 5, 4 vs 9, (0, 2, 4, 6, 8) vs (1, 3, 5, 7, 9) and also explored the effect of normalizing the image vectors on an algorithm ability to classify the digits. Normalizing a pixel means taking its 0-255 value and mapping it to the range $[-1,1]$. 
+The training sets used consisted of 200 images of each digit to be classified. Validation and test sets contained 150 for each digit. Each 28 X 28 image was treated as an vector of length 784. We tried the following classfication tasks:  1 vs 7, 3 vs 5, 4 vs 9, (0, 2, 4, 6, 8) vs (1, 3, 5, 7, 9) and also explored the effect of normalizing the image vectors on an algorithm ability to classify the digits. Normalizing a pixel means taking its 0-255 value and mapping it to the range $[-1,1]$. 
+
+The table below shows test error rates for each classification method.
+
+\begin{center}
+ \begin{tabular}{||c c c c||} 
+ \hline
+  & Logistic Regression & Linear SVM & Gaussian RBF SVM & Pegasos \\ [0.5ex] 
+ \hline\hline
+ 1 vs 7 & 0 & 0 & 0 \\ 
+ \hline
+ 3 vs 5 & 0.1775 & 0.18 & 0.195 \\
+ \hline
+ 4 vs 9 3 & 0.02 & 0.03 & 0.045 \\
+ \hline
+ Even vs Odd 4 & 0.3 & 0.305 & 0.3 \\
+ \hline
+\end{tabular}
+\end{center}
 
 \subsection{Logistic Regression vs Linear SVM}
+The classification accuracies of logistic regression and linear SVM for most tasks are very similar. On normalized data, both achieved zero training error on all tasks while getting $95-99\%$ accuracy on test data.
+Logistic regression performs the same with or without normalization.
 
 \subsection{Effect of C on Margin}
 

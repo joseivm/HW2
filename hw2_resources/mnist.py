@@ -29,8 +29,8 @@ def loadDigit(digit, num, used):
     X = data[used:used+num]
     for x in X:
         for i in xrange(len(x)):
-            # x[i] = 2.0*x[i] / 255.0 - 1
-            x[i] = x[i]
+            x[i] = 2.0*x[i] / 255.0 - 1
+            # x[i] = x[i]
     return X
 
 def evaluatePredict(X, Y, predict):
@@ -51,8 +51,8 @@ def evaluatePredict(X, Y, predict):
     print "Misclassifications: ", misclassifications
     return misclassrate, misclassifications
 
-def buildLRPredict(X,Y,C):
-    w = trainLRL1norm(X,Y,C)
+def buildLRPredict(X,Y,C,s):
+    w = trainLRL2norm(X,Y,C,s)
     predict = constructPredictLR(w)
     return predict
 
@@ -73,8 +73,9 @@ def openMisclassifications(X,Y,misclassifications):
         plt.show()
 
 
-C_SVM = [10**0, 10**1, 10**2]
+C_SVM = [10**0]
 C_LR = [10**0]
+s = 1
 lambds = [2**-10]
 max_iter = 500
 
@@ -89,12 +90,12 @@ testX, testY = buildTestSet(pos_digits,neg_digits)
 
 print '======Training======'
 predicts = []
-for C in C_LR:
-    predict = buildLRPredict(trainX, trainY, C)
-    predicts.append((C, predict))
-# for C in C_SVM:
-#     predict = buildSVMPredict(trainX, trainY, C)
-#     predicts.append((C,predict))
+# for C in C_LR:
+#     predict = buildLRPredict(trainX, trainY, C, s)
+#     predicts.append((C, predict))
+for C in C_SVM:
+    predict = buildSVMPredict(trainX, trainY, C)
+    predicts.append((C,predict))
 # for lambd in lambds:
 #     predict = buildPegasosPredict(trainX, trainY, lambd, max_iter)
 #     predicts.append((lambd,predict))
@@ -113,6 +114,7 @@ for param,predict in predicts:
         bestParam = param
         bestpredict = predict
         bestmisclassifications = misclassifications
+        bestmisclassrate = misclassrate
 
 print '======Best Validation======'
 print "Param: ", bestParam

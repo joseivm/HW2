@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 OCT 2016 05:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 OCT 2016 05:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -591,12 +591,12 @@ File: Figures/P2/svm_data1_test_C-2.png Graphic file (type png)
 
 <use Figures/P2/svm_data1_test_C-2.png>
 Package pdftex.def Info: Figures/P2/svm_data1_test_C-2.png used on input line 2
-78.
+77.
 (pdftex.def)             Requested size: 155.02pt x 116.26514pt.
 File: Figures/P2/svm_data1_test_C1.png Graphic file (type png)
  <use Figures/P2/svm_data1_test_C1.png>
 Package pdftex.def Info: Figures/P2/svm_data1_test_C1.png used on input line 28
-3.
+2.
 (pdftex.def)             Requested size: 155.02pt x 116.26514pt.
 
 <Figures/P2/svm_data1_test_C100.png, id=46, 578.16pt x 433.62pt>
@@ -604,7 +604,7 @@ File: Figures/P2/svm_data1_test_C100.png Graphic file (type png)
 
 <use Figures/P2/svm_data1_test_C100.png>
 Package pdftex.def Info: Figures/P2/svm_data1_test_C100.png used on input line 
-288.
+287.
 (pdftex.def)             Requested size: 155.02pt x 116.26514pt.
 
 <Figures/P2/RBF_data4_test_g1C-2.png, id=47, 578.16pt x 433.62pt>
@@ -612,7 +612,7 @@ File: Figures/P2/RBF_data4_test_g1C-2.png Graphic file (type png)
 
 <use Figures/P2/RBF_data4_test_g1C-2.png>
 Package pdftex.def Info: Figures/P2/RBF_data4_test_g1C-2.png used on input line
- 297.
+ 296.
 (pdftex.def)             Requested size: 155.02pt x 116.26514pt.
 
 <Figures/P2/RBF_data4_test_g1C1.png, id=48, 578.16pt x 433.62pt>
@@ -620,7 +620,7 @@ File: Figures/P2/RBF_data4_test_g1C1.png Graphic file (type png)
 
 <use Figures/P2/RBF_data4_test_g1C1.png>
 Package pdftex.def Info: Figures/P2/RBF_data4_test_g1C1.png used on input line 
-302.
+301.
 (pdftex.def)             Requested size: 155.02pt x 116.26514pt.
 
 <Figures/P2/RBF_data4_test_g1C100.png, id=49, 578.16pt x 433.62pt>
@@ -628,25 +628,22 @@ File: Figures/P2/RBF_data4_test_g1C100.png Graphic file (type png)
 
 <use Figures/P2/RBF_data4_test_g1C100.png>
 Package pdftex.def Info: Figures/P2/RBF_data4_test_g1C100.png used on input lin
-e 307.
+e 306.
 (pdftex.def)             Requested size: 155.02pt x 116.26514pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (35.8207pt too wide) in paragraph at lines 313--316
-[]\OT1/ptm/m/n/10 ======= small lamb-das pe-nal-ize the w less, which let w get
- big-ger >>>>>>> f5a6e012cde3361dfe4b260a617d8c21b0f77a3b 
- []
+Underfull \vbox (badness 3590) has occurred while \output is active []
 
-[5 <./Figures/P2/svm_data1_test_C1.png> <./Figures/P2/svm_data2_test_C1.png> <.
-/Figures/P2/svm_data3_test_C1.png> <./Figures/P2/svm_data4_test_C1.png> <./Figu
-res/P2/svm_data1_test_C-2.png> <./Figures/P2/svm_data1_test_C100.png>]
+ [5 <./Figures/P2/svm_data1_test_C1.png> <./Figures/P2/svm_data2_test_C1.png> <
+./Figures/P2/svm_data3_test_C1.png> <./Figures/P2/svm_data4_test_C1.png> <./Fig
+ures/P2/svm_data1_test_C-2.png> <./Figures/P2/svm_data1_test_C100.png>]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.333 ...ested several values of lambda between 2^
+l.322 ...ested several values of lambda between 2^
                                                   1 and 2^-10 and found that...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -654,7 +651,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.334 
+l.323 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -681,7 +678,7 @@ ve/2015/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fo
 nts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
 urw/times/utmri8a.pfb>
-Output written on writeup2.pdf (6 pages, 1146408 bytes).
+Output written on writeup2.pdf (6 pages, 1145743 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  37 compressed objects within 1 object stream

@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1477474589 "writeup2.tex" "writeup2.pdf" "writeup2" 1477474591
+["pdflatex"] 1477474780 "writeup2.tex" "writeup2.pdf" "writeup2" 1477474782
   "./Figures/P1/1_1_L0.png" 1477465704 19310 5341c8778fa4b2ec074a7d516ed33dbb ""
   "./Figures/P1/1_1_L1.png" 1477465704 19166 00aaae98dace7f0b67cecdcd0a5f352a ""
   "./Figures/P1/B_CERL1.png" 1477465704 21476 93b601180f361c76adec26f32870b000 ""
@@ -121,9 +121,9 @@
   "Figures/P2/svm_data4_test_C1.png" 1477463264 122876 c67dbdaf6c5869d7a305031130de3638 ""
   "apalike.sty" 1412953120 1152 7e0216a1c626932f944fefc448e30fd5 ""
   "article.cls" 1475175061 19941 2ceda103c90826221636cd93dbb0953e ""
-  "writeup2.aux" 1477474591 3154 2e4852540f4cf939c3ae4cfa777497b7 ""
-  "writeup2.tex" 1477474589 20624 6151afc075d8f730bb717281f296e478 ""
+  "writeup2.aux" 1477474782 3154 2e4852540f4cf939c3ae4cfa777497b7 ""
+  "writeup2.tex" 1477474753 20345 3a15470111e06cdc301bae7d340ed8b5 ""
   (generated)
-  "writeup2.log"
   "writeup2.pdf"
   "writeup2.aux"
+  "writeup2.log"
