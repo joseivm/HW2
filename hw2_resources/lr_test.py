@@ -103,7 +103,7 @@ def constructPredictLR(w):
 
 
 if __name__ == "__main__":
-	name = '1'
+	name = '4'
 
 	# print '======Training======'
 	# load data from csv files
@@ -136,7 +136,7 @@ if __name__ == "__main__":
 
 	Xv = validate[:,0:2]
 	Yv = validate[:,2:3]
-	cost_dict = {}
+	# cost_dict = {}
 	for i in range(-4,5):
 		C = 10**i
 		s = 1
@@ -146,24 +146,35 @@ if __name__ == "__main__":
 
 		CER1 = 1- model.score(Xv,Yv)
 		CER2 = 1- model2.score(Xv,Yv)
-		a = (str(CER1),i)
-		b = (str(CER2),i+1)
-		cost_dict[a] = (model,C,'L1')
-		cost_dict[b] = (model2,C,'L2')
+		acc1 = model.score(Xt,Yt)
+		acc2 = model2.score(Xt,Yt)
+		# a = (CER1,'LR1',1.0/C)
+		# b = (CER2,'LR2',1.0/C)
+		# cost_dict[a] = model
+		# cost_dict[b] = model2
+		print 'LR1', 'lambda =', 1.0/C , "Val_accuracy:", 1-CER1, 'Test_acc:', acc1
+		print 'LR2', 'lambda =', 1.0/C , "Val_accuracy:", 1-CER2, 'Test_acc:', acc2
 
-	print len(cost_dict)
+
+
+
+	# print cost_dict.keys()
 	# vals_to_test = []
+	# val_specs = []
 	# l = 0
 	# while (l<11):
 
-	# 	min_el = min(cost_dict)
+	# 	min_el = max(cost_dict.keys(), key=lambda x: float(x[0]))
 	# 	vals = cost_dict.pop(min_el)
+	# 	CER,reg,lmbda = min_el
+	# 	val_specs.append((reg,lmbda))
 	# 	vals_to_test.append(vals)
 
-	# for val in vals_to_test:
-	# 	model, C, reg = val
+	# for i in range(len(vals_to_test)):
+	# 	model = vals_to_test[i]
+	# 	reg, lmbda = val_specs[i]
 	# 	acc = model.score(Xt,Yt)
-	# 	print reg, 'lambda =', 1.0/C , "accuracy:", acc
+	# 	print reg, 'lambda =', lmbda , "accuracy:", acc
 
 
 

@@ -4,7 +4,7 @@ import numpy as np
 # import your LR training code
 
 # load data from csv files
-train = loadtxt('data/data3_train.csv')
+train = loadtxt('data/data4_train.csv')
 X = train[:,0:2]
 Y = train[:,2:3]
 
@@ -73,7 +73,7 @@ for i in [-2,-1,0,1,2]:
 
 
 	alphas = train_gaussianSVM(X, Y, K, lmbda, epochs);
-	print np.count_nonzero(alphas)
+	# print np.count_nonzero(alphas)
 
 
 	# Define the predict_gaussianSVM(x) function, which uses trained parameters, alpha
