@@ -11,6 +11,8 @@ def sigmoid(x):
 	return 1.0/(1+np.exp(-x))
 
 def batch_gradient_descent(obj_func,gradient_func,init_guess,step_size,convergence_criterion):
+	I = []
+	S = []
 	size = init_guess.shape[0]
 	w_old = init_guess
 	w_new = np.zeros(size)
@@ -21,7 +23,8 @@ def batch_gradient_descent(obj_func,gradient_func,init_guess,step_size,convergen
 	converged = False
 	while (not converged):
 
-		if iterations%7==0: print iterations
+		# if iterations%7==0: print iterations
+
 		w_new = w_old - alpha*gradient_func(w_old)
 		new_cost = obj_func(w_new)
 		
@@ -32,13 +35,15 @@ def batch_gradient_descent(obj_func,gradient_func,init_guess,step_size,convergen
 		w_old = w_new
 
 		if iterations%7==0: print w_new, np.linalg.norm(w_new)
+		I.append(iterations)
+		S.append(np.linalg.norm(w_new))
 		iterations+=1
 		
 
 	# print 'minimum occurs at: ', w_new
 	print "min val", new_cost
 	print iterations
-	return w_new
+	return w_new, I,S # FIX THIS
 
 def LR_obj_maker_batch1(X,Y,lambd):
 	def LR(w):
@@ -48,7 +53,7 @@ def LR_obj_maker_batch1(X,Y,lambd):
 		ind_0 = (1-Y)/2
 		log_s = np.log(sigmoid(np.dot(theta,X.T)+theta_0))
 		reg_term = lambd*np.linalg.norm(theta)**2
-		return - np.sum(ind_1*log_s+ind_0*(1-log_s))
+		return - np.sum(ind_1*log_s+ind_0*(1-log_s))+reg_term
 
 	return LR
 
@@ -68,24 +73,24 @@ def LR_grad_maker_batch1(X,Y,lambd):
 
 	return LR_grad
 
-def trainBatchGradientDescent(X,Y,step_size, convergence_criterion):
-	guess = np.random.random(3)
-	LR_obj = LR_obj_maker_batch1(X,Y,0)
-	LR_grad = LR_grad_maker_batch1(X,Y,0)
+def trainBatchGradientDescent(X,Y,step_size, convergence_criterion,lmbda):
+	guess = np.random.random(3)*10
+	LR_obj = LR_obj_maker_batch1(X,Y,lmbda)
+	LR_grad = LR_grad_maker_batch1(X,Y,lmbda)
 	w = batch_gradient_descent(LR_obj,LR_grad,guess,step_size,convergence_criterion)
 	return w
 
-def trainLRL1norm(X,Y,C):
-	model = LogisticRegression(penalty='l1',C=C)
+def trainLRL1norm(X,Y,C,s):
+	model = LogisticRegression(penalty='l1',C=C,intercept_scaling=s)
 	model.fit(X,Y)
 	w = np.concatenate((model.intercept_,model.coef_[0]))
-	return w
-
-def trainLRL2norm(X,Y,C):
-	model = LogisticRegression(C=C)
+	return w, model # FIX THIS
+ 
+def trainLRL2norm(X,Y,C,s):
+	model = LogisticRegression(C=C,intercept_scaling=s)
 	model.fit(X,Y)
 	w = np.concatenate((model.intercept_,model.coef_[0]))
-	return w
+	return w, model # FIX THIS
 
 def constructPredictLR(w):
 	def predictLR(x):
@@ -98,7 +103,7 @@ def constructPredictLR(w):
 
 
 if __name__ == "__main__":
-	name = '3'
+	name = '1'
 
 	# print '======Training======'
 	# load data from csv files
@@ -108,15 +113,44 @@ if __name__ == "__main__":
 
 	Y = Y.ravel()
 
-	C = 10**0
+	C = 10**8
 	# Cs = [.0001,.001,.01,.1,1,10,100,1000,10000]
-	step_size = 10**-2
+	step_size = 10**0
 	convergence_criterion = 10**-6
 
-	w = trainBatchGradientDescent(X, Y, step_size, convergence_criterion)
-	# w = trainLRL1norm(X,Y,C)
-	# w = trainLRL2norm(X,Y,C)
+	# w,I,S = trainBatchGradientDescent(X, Y, step_size, convergence_criterion,0)
+	# w1,I1,S1 = trainBatchGradientDescent(X, Y, step_size, convergence_criterion,1)
+	# diff = len(I)-len(I1)
+	# conv_val = S1[len(I1)-1]
+	# rest = conv_val*np.ones(diff)
+	# S1 = np.concatenate((S1,rest),axis=0)
 
+	# for i in [-3,-2,-1,0,1,2,3]:
+	# 	C = 10**i
+	# 	s = 1
+	# 	if i < 0 : s = 10**np.abs(i)
+	# 	w, model = trainLRL2norm(X,Y,C,s)
+	# 	CER = 1- model.score(X,Y)
+	# 	print 'lambda =', 1.0/C, 'Scaling:',s, 'CER:', CER, "w:", w, "norm:", np.linalg.norm(w)
+	# 	predictLR = constructPredictLR(w)
+	# 	title = "lambda = "+str(1.0/C)+" LR2"
+	# 	plotDecisionBoundary(X, Y, predictLR, [0], title = title)
+	# 	pl.show()
+
+	# print " "
+	# for i in [-5,-4,-3,-2,-1,0,1,2,3,4,5]:
+	# 	C = 10**i
+	# 	w, model = trainLRL2norm(X,Y,C,1)
+	# 	CER = 1- model.score(X,Y)
+	# 	print 'lambda =', 1.0/C, 'CER:', CER, "w:", w, "norm:", np.linalg.norm(w)
+
+	w2, model = trainLRL2norm(X,Y,C,1)
+	print w2, np.linalg.norm(w2)
+
+	# pl.plot(I,S,'b',label= "lambda = 0")
+	# pl.plot(I,S1,'r', label= "lambda = 1")
+
+	# pl.legend(loc='best')
 	# predictLR = constructPredictLR(w)
 
 	# plot training results
